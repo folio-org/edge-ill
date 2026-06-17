@@ -1,0 +1,5 @@
+Unauthorized:
+  description: Not authorized to perform requested action
+  content:
+    text/plain:
+      example: unable to perform action -- unauthorized

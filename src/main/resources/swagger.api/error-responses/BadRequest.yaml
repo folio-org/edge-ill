@@ -1,0 +1,14 @@
+description: Bad Request
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/responses/errors.yaml"
+    example:
+      errors:
+        - code: "validation"
+          type: "BadRequest"
+          message: "The input provided is invalid."
+          parameters:
+            - name: "field"
+              value: "must not be empty"
+      total_records: 1

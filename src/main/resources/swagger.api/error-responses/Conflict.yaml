@@ -1,0 +1,14 @@
+description: Conflict
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/responses/errors.yaml"
+    example:
+      errors:
+        - code: "entity_exists"
+          type: "EntityExistsException"
+          message: "Entity already exists."
+          parameters:
+            - name: "id"
+              value: "5ac63bf6-20e4-4449-9efd-01dbca051acf"
+      total_records: 1

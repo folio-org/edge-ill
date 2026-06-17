@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: edge-dcb
+
+folio:
+  client:
+    okapiUrl: ${wm.url}
+
+logging:
+  level:
+    org.folio.edgeill: debug
+    org.springframework.web: info

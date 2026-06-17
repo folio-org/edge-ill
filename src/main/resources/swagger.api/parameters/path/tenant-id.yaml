@@ -1,0 +1,7 @@
+name: tenantId
+in: path
+required: true
+schema:
+  type: string
+
+example: "diku"

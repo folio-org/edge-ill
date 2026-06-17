@@ -1,0 +1,24 @@
+description: "An error"
+type: "object"
+properties:
+  message:
+    type: "string"
+    description: "Error message text"
+  type:
+    type: "string"
+    description: "Error message type"
+  code:
+    type: "string"
+    description: "Error message code"
+  parameters:
+    type: "array"
+    items:
+      $ref: "parameter.yaml"
+
+example:
+  message: "Entity already exists."
+  type: "EntityExistsException"
+  code: "entity_exists"
+  parameters:
+    - name: "id"
+      value: "5ac63bf6-20e4-4449-9efd-01dbca051acf"

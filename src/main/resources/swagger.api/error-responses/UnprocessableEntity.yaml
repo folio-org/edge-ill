@@ -1,0 +1,11 @@
+description: Unprocessable Entity
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/responses/errors.yaml"
+    example:
+      errors:
+        - type: "UnprocessableEntityException"
+          message: "The provided data cannot be processed."
+          code: "service"
+      total_records: 1

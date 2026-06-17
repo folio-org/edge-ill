@@ -1,0 +1,23 @@
+description: "A set of errors"
+type: "object"
+properties:
+  errors:
+    description: "List of errors"
+    x-field-extra-annotation: "@com.fasterxml.jackson.annotation.JsonInclude(com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL)"
+    type: "array"
+    items:
+      $ref: "../entity/error.yaml"
+  total_records:
+    description: "Total number of errors"
+    type: "integer"
+
+example:
+  errors:
+    - message: "Error Message Text"
+      type: "ServiceException"
+      code: "error_code"
+      parameters:
+        - name: "cause"
+          value: "Service exception cause"
+  total_records: 1
+

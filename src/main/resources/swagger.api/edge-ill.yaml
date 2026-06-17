@@ -1,0 +1,14 @@
+openapi: 3.0.3
+info:
+  title: Edge ILL FOLIO API
+  description: |
+    Edge API that proxies external client requests to the FOLIO mod-ill module.
+    Endpoints mirror the mod-ill `ill` interface as declared in its module descriptor.
+  version: 1.0.0
+servers:
+  - url: /
+
+paths:
+  ## Application API
+  /illService/tenants/{tenantId}:
+    $ref: 'paths/application/ill.yaml'

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.1.0</version>
+    <relativePath />
+  </parent>
+
+  <groupId>org.folio</groupId>
+  <artifactId>edge-ill</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <licenses>
+    <license>
+      <name>Apache License 2.0</name>
+      <url>https://spdx.org/licenses/Apache-2.0</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <java.version>21</java.version>
+    <edge-common-spring.version>4.1.0-SNAPSHOT</edge-common-spring.version>
+    <edge-common.version>5.1.1</edge-common.version>
+    <mapstruct.version>1.6.3</mapstruct.version>
+    <folio-spring-support.version>10.1.0-SNAPSHOT</folio-spring-support.version>
+    <openapi-generator-maven-plugin.version>7.22.0</openapi-generator-maven-plugin.version>
+    <edge-ill.yaml.file>src/main/resources/swagger.api/edge-ill.yaml</edge-ill.yaml.file>
+    <sonar.exclusions>
+      src/main/java/org/folio/ed/domain/**,
+      src/main/java/org/folio/ed/EdgeIllApplication.java
+    </sonar.exclusions>
+
+    <!-- Test Dependency Versions   -->
+    <awaitility.version>4.3.0</awaitility.version>
+    <testcontainers.version>2.0.5</testcontainers.version>
+    <wiremock-standalone.version>3.13.2</wiremock-standalone.version>
+    <jetbrains-annotations.version>26.0.2-1</jetbrains-annotations.version>
+
+    <!-- Plugin Versions   -->
+    <checkstyle.version>13.5.0</checkstyle.version>
+    <folio-java-checkstyle.version>1.2.0</folio-java-checkstyle.version>
+    <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
+    <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers-bom</artifactId>
+        <version>${testcontainers.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.folio</groupId>
+      <artifactId>folio-spring-base</artifactId>
+      <version>${folio-spring-support.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcprov-jdk18on</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.folio</groupId>
+      <artifactId>edge-common-spring</artifactId>
+      <version>${edge-common-spring.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.bouncycastle</groupId>
+          <artifactId>bcprov-jdk18on</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring-framework.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-to-slf4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-to-slf4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-cache</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-ip</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <optional>true</optional>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${mapstruct.version}</version>
+    </dependency>
+
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-to-slf4j</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>ch.qos.logback</groupId>
+          <artifactId>logback-classic</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-webmvc-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-event</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.integration</groupId>
+      <artifactId>spring-integration-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.wiremock</groupId>
+      <artifactId>wiremock-standalone</artifactId>
+      <version>${wiremock-standalone.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.awaitility</groupId>
+      <artifactId>awaitility</artifactId>
+      <version>${awaitility.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.testcontainers</groupId>
+      <artifactId>testcontainers-junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.folio</groupId>
+      <artifactId>edge-common</artifactId>
+      <version>${edge-common.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>${jetbrains-annotations.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${maven-clean-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>auto-clean</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <layers>
+            <enabled>true</enabled>
+          </layers>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>filter-descriptor-inputs</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/descriptors</directory>
+                  <include>*Descriptor*-template.json</include>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.coderplus.maven.plugins</groupId>
+        <artifactId>copy-rename-maven-plugin</artifactId>
+        <version>${copy-rename-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>rename-descriptor-outputs</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>rename</goal>
+            </goals>
+            <configuration>
+              <fileSets>
+                <fileSet>
+                  <sourceFile>${project.build.directory}/ModuleDescriptor-template.json</sourceFile>
+                  <destinationFile>${project.build.directory}/ModuleDescriptor.json</destinationFile>
+                </fileSet>
+                <fileSet>
+                  <sourceFile>${project.build.directory}/DeploymentDescriptor-template.json</sourceFile>
+                  <destinationFile>${project.build.directory}/DeploymentDescriptor.json</destinationFile>
+                </fileSet>
+              </fileSets>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>${project.build.directory}/generated-sources</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <release>${java.version}</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.openapitools</groupId>
+        <artifactId>openapi-generator-maven-plugin</artifactId>
+        <version>${openapi-generator-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>remoteStorage</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <inputSpec>${edge-ill.yaml.file}</inputSpec>
+              <output>${project.build.directory}/generated-sources</output>
+              <generatorName>spring</generatorName>
+              <modelPackage>${project.groupId}.edgeill.domain.dto</modelPackage>
+              <apiPackage>${project.groupId}.edgeill.rest.resource</apiPackage>
+              <generateApis>true</generateApis>
+              <generateApiTests>true</generateApiTests>
+              <generateApiDocumentation>true</generateApiDocumentation>
+              <generateModels>true</generateModels>
+              <generateModelTests>false</generateModelTests>
+              <generateSupportingFiles>true</generateSupportingFiles>
+              <supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+              <generateModelDocumentation>true</generateModelDocumentation>
+              <configOptions>
+                <java8>true</java8>
+                <useTags>true</useTags>
+                <dateLibrary>java8</dateLibrary>
+                <interfaceOnly>true</interfaceOnly>
+                <withXml>false</withXml>
+                <useJackson3>true</useJackson3>
+                <openApiNullable>false</openApiNullable>
+                <useSpringBoot4>true</useSpringBoot4>
+                <generateBuilders>true</generateBuilders>
+              </configOptions>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <useSystemClassLoader>false</useSystemClassLoader>
+          <groups>unit</groups>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <groups>integration</groups>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <preparationGoals>clean verify</preparationGoals>
+          <tagNameFormat>v@{project.version}</tagNameFormat>
+          <pushChanges>false</pushChanges>
+          <localCheckout>true</localCheckout>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>${maven-checkstyle-plugin.version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>${checkstyle.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.folio</groupId>
+            <artifactId>folio-java-checkstyle</artifactId>
+            <version>${folio-java-checkstyle.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>verify-style</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <sourceDirectories>
+            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+            <sourceDirectory>${project.build.testSourceDirectory}</sourceDirectory>
+          </sourceDirectories>
+          <failsOnError>true</failsOnError>
+          <outputEncoding>UTF-8</outputEncoding>
+          <inputEncoding>UTF-8</inputEncoding>
+          <violationSeverity>warning</violationSeverity>
+          <failOnViolation>true</failOnViolation>
+          <logViolationsToConsole>true</logViolationsToConsole>
+          <configLocation>folio-checkstyle/checkstyle.xml</configLocation>
+          <propertiesLocation>${basedir}/checkstyle/checkstyle-checker.properties</propertiesLocation>
+          <cacheFile>${basedir}/target/cachefile</cacheFile>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>folio-nexus</id>
+      <name>FOLIO Maven repository</name>
+      <url>https://repository.folio.org/repository/maven-folio</url>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>folio-nexus</id>
+      <name>FOLIO Maven repository</name>
+      <url>https://repository.folio.org/repository/maven-folio</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <distributionManagement>
+    <repository>
+      <id>folio-nexus</id>
+      <name>FOLIO Release Repository</name>
+      <url>https://repository.folio.org/repository/maven-releases/</url>
+      <uniqueVersion>false</uniqueVersion>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <id>folio-nexus</id>
+      <name>FOLIO Snapshot Repository</name>
+      <uniqueVersion>true</uniqueVersion>
+      <url>https://repository.folio.org/repository/maven-snapshots/</url>
+      <layout>default</layout>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <scm>
+    <url>https://github.com/folio-org/${project.artifactId}</url>
+    <connection>scm:git:git://github.com/folio-org/${project.artifactId}.git</connection>
+    <developerConnection>scm:git:git@github.com:folio-org/${project.artifactId}.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+</project>

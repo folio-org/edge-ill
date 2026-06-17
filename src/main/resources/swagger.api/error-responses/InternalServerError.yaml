@@ -1,0 +1,11 @@
+description: Internal Server Error
+content:
+  application/json:
+    schema:
+      $ref: "../schemas/responses/errors.yaml"
+    example:
+      errors:
+        - code: "service"
+          type: "InternalServerErrorException"
+          message: "Unknown Service Exception"
+      total_records: 1

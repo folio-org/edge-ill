@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: edge-ill
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_empty
+  liquibase:
+    enabled: false
+  flyway:
+    enabled: false
+
+management:
+  endpoints:
+    web:
+      base-path: /admin
+      exposure:
+        include: ${ACTUATOR_EXPOSURE:health,info,loggers}
+  endpoint:
+    loggers:
+      access: READ_ONLY
+
+server:
+  port: 8081
+
+header:
+  edge:
+    validation:
+      exclude: /admin/health,/admin/info,/swagger-resources,/v2/api-docs,/swagger-ui,/_/tenant,/illService/tenants/
+
+folio:
+  tenant:
+    validation:
+      enabled: false
+  system-user:
+    username: system-user
+    password: ${SYSTEM_USER_PASSWORD} # Not used but added to avoid DI errors from folio-spring-system-user
+  environment: folio
+  client:
+    okapiUrl: https://localhost:9130
+    tls:
+      enabled: false
+
+secure_store: ephemeral
+secure_store_props: src/main/resources/ephemeral.properties
+
+logging:
+  level:
+    "org.springframework.cache": OFF

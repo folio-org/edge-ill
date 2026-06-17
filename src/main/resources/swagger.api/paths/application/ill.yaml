@@ -1,0 +1,15 @@
+get:
+  tags: [ Application ]
+  description: "The settings for the applications"
+  operationId: ill
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
