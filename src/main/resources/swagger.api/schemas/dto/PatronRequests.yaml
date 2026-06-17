@@ -1,0 +1,8 @@
+type: object
+properties:
+  totalRecords:
+    type: integer
+  requests:
+    type: array
+    items:
+      $ref: 'PatronRequest.yaml'

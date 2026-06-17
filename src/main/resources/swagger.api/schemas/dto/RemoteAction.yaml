@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  rotaPosition:
+    type: integer
+    format: int64
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+  parameters:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  expires:
+    type: string
+    format: date-time
+  lastAccessed:
+    type: string
+    format: date-time
+required:
+- patronRequest
+- rotaPosition
+- dateCreated

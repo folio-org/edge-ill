@@ -1,0 +1,37 @@
+type: object
+properties:
+  id:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  dateCreated:
+    type: string
+    format: date-time
+  fromStatus:
+    $ref: 'Status.yaml'
+  toStatus:
+    $ref: 'Status.yaml'
+  duration:
+    type: integer
+    format: int64
+  message:
+    type: string
+  auditData:
+    type: string
+  user:
+    type: string
+  auditNo:
+    type: integer
+    format: int32
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+  rotaPosition:
+    type: integer
+    format: int64
+  undoPerformed:
+    type: boolean
+  messageSequenceNo:
+    type: integer
+    format: int32
+required:
+- patronRequest

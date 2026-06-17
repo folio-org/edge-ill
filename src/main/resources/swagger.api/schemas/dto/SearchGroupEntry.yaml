@@ -1,0 +1,12 @@
+type: object
+properties:
+  searchGroup:
+    $ref: 'SearchGroup.yaml'
+  search:
+    $ref: 'Search.yaml'
+  rank:
+    type: integer
+    format: int32
+required:
+- searchGroup
+- search

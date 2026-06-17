@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    type: string
+  model:
+    $ref: 'StateModel.yaml'
+  fromState:
+    $ref: 'Status.yaml'
+  actionCode:
+    type: string
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+  triggerType:
+    type: string
+  actionType:
+    type: string
+  actionBody:
+    type: string
+  resultList:
+    $ref: 'ActionEventResultList.yaml'
+  isAvailableGroovy:
+    type: string
+required:
+- model
+- fromState
+- actionCode

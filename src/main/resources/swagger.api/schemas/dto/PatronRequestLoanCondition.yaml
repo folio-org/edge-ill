@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  code:
+    type: string
+  note:
+    type: string
+  relevantSupplier:
+    $ref: 'Symbol.yaml'

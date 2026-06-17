@@ -1,0 +1,24 @@
+type: object
+properties:
+  fromState:
+    type: array
+    items:
+      type: object
+      properties:
+        fromStatus:
+          type: string
+        action:
+          type: boolean
+        qualifier:
+          type: string
+        toStatus:
+          type: string
+  message:
+    type: string
+
+example:
+  toState:
+    - fromStatus: 'RECEIVED'
+      action: 'PROCESS'
+      qualifier: 'APPROVE'
+      toStatus: 'APPROVED'

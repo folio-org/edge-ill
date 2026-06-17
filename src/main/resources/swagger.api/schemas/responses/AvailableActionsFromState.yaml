@@ -1,0 +1,13 @@
+type: object
+properties:
+  fromState:
+    type: array
+    items:
+      type: string
+  message:
+    type: string
+
+example:
+  fromState:
+    - 'RECEIVED'
+    - 'IN_PROGRESS'

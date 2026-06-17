@@ -1,0 +1,19 @@
+post:
+  tags: [ PatronRequests ]
+  description: "Performs the specified action against the specified requests"
+  operationId: postBulkAction
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

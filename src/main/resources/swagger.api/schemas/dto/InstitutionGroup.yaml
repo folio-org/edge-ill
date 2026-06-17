@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  institutions:
+    type: object
+  institutionUsers:
+    type: object
+required:
+- name
+- description

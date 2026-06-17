@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: string
+  description:
+    type: string
+  code:
+    type: string
+  rrule:
+    type: string
+  lastExecution:
+    type: integer
+    format: int64
+  nextExecution:
+    type: integer
+    format: int64
+  taskCode:
+    type: string
+  taskConfig:
+    type: string
+  enabled:
+    type: boolean
+  executeAtDayStart:
+    type: boolean
+  institution:
+    $ref: 'Institution.yaml'
+  institutionAware:
+    type: boolean
+required:
+- taskCode

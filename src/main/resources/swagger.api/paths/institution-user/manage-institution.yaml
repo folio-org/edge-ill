@@ -1,0 +1,13 @@
+get:
+  tags: [ InstitutionUser ]
+  description: "Set the institution to be managed"
+  operationId: institutionUserManageInstitution
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

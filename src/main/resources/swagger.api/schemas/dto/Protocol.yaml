@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  protocolConversions:
+    type: array
+    items:
+      $ref: 'ProtocolConversion.yaml'
+  actionEvents:
+    type: array
+    items:
+      $ref: 'ProtocolActionEvent.yaml'
+required:
+- code
+- description

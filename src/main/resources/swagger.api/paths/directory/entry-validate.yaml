@@ -1,0 +1,19 @@
+post:
+  tags: [ Directory ]
+  description: "Validates the supplied record"
+  operationId: directoryEntryValidate
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

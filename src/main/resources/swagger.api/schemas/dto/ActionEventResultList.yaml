@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  results:
+    type: array
+    items:
+      $ref: 'ActionEventResult.yaml'
+required:
+- code
+- description

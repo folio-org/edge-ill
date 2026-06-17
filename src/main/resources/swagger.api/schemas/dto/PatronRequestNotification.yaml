@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  timestamp:
+    type: object
+  seen:
+    type: boolean
+  isSender:
+    type: boolean
+  attachedAction:
+    type: string
+  actionStatus:
+    type: string
+  actionData:
+    type: string
+  messageSender:
+    $ref: 'Symbol.yaml'
+  messageReceiver:
+    $ref: 'Symbol.yaml'
+  messageContent:
+    type: string

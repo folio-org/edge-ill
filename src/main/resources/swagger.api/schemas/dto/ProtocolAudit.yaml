@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  protocolType:
+    $ref: '../types/ProtocolType.yaml'
+  protocolMethod:
+    $ref: '../types/ProtocolMethod.yaml'
+  url:
+    type: string
+  requestBody:
+    type: string
+  responseStatus:
+    type: string
+  responseBody:
+    type: string
+  duration:
+    type: integer
+    format: int64
+required:
+- patronRequest
+- protocolType
+- protocolMethod
+- url
+- duration

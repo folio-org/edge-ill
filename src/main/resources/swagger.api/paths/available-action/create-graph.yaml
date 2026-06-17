@@ -1,0 +1,25 @@
+get:
+  tags: [ AvailableAction ]
+  description: Builds a graph of the requested state model using the DOT language
+  operationId: createGraph
+  parameters:
+    - $ref: '../../parameters/path/state-model.yaml'
+    - $ref: '../../parameters/query/exclude-actions.yaml'
+    - $ref: '../../parameters/query/exclude-protocol-actions.yaml'
+    - $ref: '../../parameters/query/height.yaml'
+    - $ref: '../../parameters/query/output-format.yaml'
+    - $ref: '../../parameters/query/traverse-hierarchy.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        text/plain:
+          schema:
+            description: DOT graph representation of the state model
+            type: string
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

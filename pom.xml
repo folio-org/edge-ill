@@ -36,6 +36,7 @@
 
     <!-- Test Dependency Versions   -->
     <awaitility.version>4.3.0</awaitility.version>
+    <rest-assured.version>6.0.0</rest-assured.version>
     <testcontainers.version>2.0.5</testcontainers.version>
     <wiremock-standalone.version>3.13.2</wiremock-standalone.version>
     <jetbrains-annotations.version>26.0.2-1</jetbrains-annotations.version>
@@ -178,8 +179,9 @@
       </exclusions>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-webmvc-test</artifactId>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <version>${rest-assured.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>

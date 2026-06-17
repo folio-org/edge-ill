@@ -1,0 +1,17 @@
+get:
+  tags: [ DocumentDeliveryServer ]
+  description: "Returns the supplied record"
+  operationId: getDocumentDeliveryServerById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

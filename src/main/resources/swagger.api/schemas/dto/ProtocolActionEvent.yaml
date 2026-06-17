@@ -1,0 +1,11 @@
+type: object
+properties:
+  id:
+    type: string
+  protocol:
+    $ref: 'Protocol.yaml'
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+required:
+- protocol
+- actionEvent

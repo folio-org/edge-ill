@@ -1,0 +1,5 @@
+name: actionCode
+in: path
+required: true
+schema:
+  type: string

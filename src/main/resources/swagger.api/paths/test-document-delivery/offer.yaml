@@ -1,0 +1,21 @@
+post:
+  tags: [ TestDocumentDelivery ]
+  description: "Test document delivery offer"
+  operationId: testOffer
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

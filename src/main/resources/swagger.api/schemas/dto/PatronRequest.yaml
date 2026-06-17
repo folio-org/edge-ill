@@ -1,0 +1,439 @@
+type: object
+properties:
+  id:
+    type: string
+  publicationType:
+    $ref: 'RefdataValue.yaml'
+  deliveryMethod:
+    $ref: 'RefdataValue.yaml'
+  requestedItemFormat:
+    $ref: 'RefdataValue.yaml'
+  shippedItemFormat:
+    $ref: 'RefdataValue.yaml'
+  requestingInstitutionSymbol:
+    type: string
+  resolvedRequester:
+    $ref: 'Symbol.yaml'
+  supplyingInstitutionSymbol:
+    type: string
+  resolvedSupplier:
+    $ref: 'Symbol.yaml'
+  peerRequestIdentifier:
+    type: string
+  title:
+    type: string
+  author:
+    type: string
+  subtitle:
+    type: string
+  sponsoringBody:
+    type: string
+  publisher:
+    type: string
+  placeOfPublication:
+    type: string
+  volume:
+    type: string
+  issue:
+    type: string
+  startPage:
+    type: string
+  numberOfPages:
+    type: string
+  publicationDate:
+    type: string
+  publicationDateOfComponent:
+    type: string
+  edition:
+    type: string
+  issn:
+    type: string
+  isbn:
+    type: string
+  doi:
+    type: string
+  coden:
+    type: string
+  sici:
+    type: string
+  bici:
+    type: string
+  eissn:
+    type: string
+  stitle:
+    type: string
+  oclcNumber:
+    type: string
+  part:
+    type: string
+  artnum:
+    type: string
+  ssn:
+    type: string
+  quarter:
+    type: string
+  bibliographicRecordId:
+    type: string
+  supplierUniqueRecordId:
+    type: string
+  systemInstanceIdentifier:
+    type: string
+  selectedItemBarcode:
+    type: string
+  titleOfComponent:
+    type: string
+  authorOfComponent:
+    type: string
+  sponsor:
+    type: string
+  informationSource:
+    type: string
+  patronIdentifier:
+    type: string
+  patronReference:
+    type: string
+  patronSurname:
+    type: string
+  patronGivenName:
+    type: string
+  patronType:
+    type: string
+  sendToPatron:
+    type: boolean
+  patronEmail:
+    type: string
+  patronNote:
+    type: string
+  pickupLocation:
+    type: string
+  pickupLocationCode:
+    type: string
+  pickupLocationSlug:
+    type: string
+  resolvedPickupLocation:
+    $ref: 'DirectoryEntry.yaml'
+  pickupURL:
+    type: string
+  bibRecord:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  neededBy:
+    type: string
+    format: date
+  localCallNumber:
+    type: string
+  hrid:
+    type: string
+  serviceType:
+    $ref: 'RefdataValue.yaml'
+  serviceLevel:
+    $ref: 'RefdataValue.yaml'
+  isRequester:
+    type: boolean
+  stateModel:
+    $ref: 'StateModel.yaml'
+  state:
+    $ref: 'Status.yaml'
+  numberOfRetries:
+    type: integer
+    format: int32
+  delayPerformingActionUntil:
+    type: string
+    format: date-time
+  preErrorStatus:
+    $ref: 'Status.yaml'
+  awaitingProtocolResponse:
+    type: boolean
+  activeLoan:
+    type: boolean
+  rotaPosition:
+    type: integer
+    format: int64
+  pickLocation:
+    $ref: 'HostLMSLocation.yaml'
+  pickShelvingLocation:
+    $ref: 'HostLMSShelvingLocation.yaml'
+  resolvedPatron:
+    $ref: 'Patron.yaml'
+  needsAttention:
+    type: boolean
+  unreadMessageCount:
+    type: integer
+    format: int32
+  hasUnreadMessages:
+    type: boolean
+  dueDateFromLMS:
+    type: string
+  parsedDueDateFromLMS:
+    type: string
+    format: date-time
+  dueDateRS:
+    type: string
+  parsedDueDateRS:
+    type: string
+    format: date-time
+  overdue:
+    type: boolean
+  cancellationReason:
+    $ref: 'RefdataValue.yaml'
+  networkStatus:
+    type: object
+  lastSendAttempt:
+    type: string
+    format: date-time
+  nextSendAttempt:
+    type: string
+    format: date-time
+  lastProtocolData:
+    type: string
+  numberOfSendAttempts:
+    type: integer
+    format: int32
+  lastSequenceSent:
+    type: integer
+    format: int32
+  lastAuditNo:
+    type: integer
+    format: int32
+  lastSequenceReceived:
+    type: integer
+    format: int32
+  sentISO18626RequestResponse:
+    type: boolean
+  institution:
+    $ref: 'Institution.yaml'
+  currentProtocol:
+    $ref: 'Protocol.yaml'
+  copyright:
+    $ref: 'PatronRequestCopyright.yaml'
+  documentDeliveryUrl:
+    type: string
+  audit:
+    type: array
+    items:
+      $ref: 'PatronRequestAudit.yaml'
+  batches:
+    type: array
+    items:
+      $ref: 'Batch.yaml'
+  conditions:
+    type: array
+    items:
+      $ref: 'PatronRequestLoanCondition.yaml'
+  notifications:
+    type: array
+    items:
+      $ref: 'PatronRequestNotification.yaml'
+  protocolAudit:
+    type: array
+    items:
+      $ref: 'ProtocolAudit.yaml'
+  requestIdentifiers:
+    type: array
+    items:
+      $ref: 'RequestIdentifier.yaml'
+  tags:
+    type: array
+    items:
+      type: object
+  volumes:
+    type: array
+    items:
+      $ref: 'RequestVolume.yaml'
+
+example:
+  id: "7e2f1a9c-4e8b-4c3d-9f2a-1b8c3d4e5f6a"
+  publicationType:
+    id: "pub-type-1"
+    value: "Journal"
+    label: "Journal"
+  deliveryMethod:
+    id: "del-method-1"
+    value: "electronic"
+    label: "Electronic"
+  requestedItemFormat:
+    id: "req-format-1"
+    value: "pdf"
+    label: "PDF"
+  shippedItemFormat:
+    id: "ship-format-1"
+    value: "pdf"
+    label: "PDF"
+  requestingInstitutionSymbol: "INST001"
+  resolvedRequester:
+    id: "sym-1"
+    symbol: "INST001"
+    prefix: "INST"
+    code: "001"
+  supplyingInstitutionSymbol: "INST002"
+  resolvedSupplier:
+    id: "sym-2"
+    symbol: "INST002"
+    prefix: "INST"
+    code: "002"
+  peerRequestIdentifier: "PEER-REQ-2024-001"
+  title: "The Future of Interlibrary Loan Systems"
+  author: "Smith, John"
+  subtitle: "A Comprehensive Study"
+  sponsoringBody: "Library Research Foundation"
+  publisher: "Academic Press"
+  placeOfPublication: "New York, NY"
+  volume: "15"
+  issue: "3"
+  startPage: "245"
+  numberOfPages: "18"
+  publicationDate: "2024-06-15"
+  publicationDateOfComponent: "2024-06-01"
+  edition: "2nd ed."
+  issn: "0885-6125"
+  isbn: "978-0-12345-678-9"
+  doi: "10.1016/j.library.2024.06.001"
+  coden: "JLYEAR"
+  sici: "1234-5678(202406)15:3<245:TFOILS>2.0.CO;2"
+  bici: "1234-5678(202406)15:3"
+  eissn: "1234-5679"
+  stitle: "Future Ill Systems"
+  oclcNumber: "1234567890"
+  part: "A"
+  artnum: "e12345"
+  ssn: "0032-3861"
+  quarter: "Q2"
+  bibliographicRecordId: "bib-001"
+  supplierUniqueRecordId: "sup-rec-001"
+  systemInstanceIdentifier: "sys-inst-001"
+  selectedItemBarcode: "BARCODE-2024-001"
+  titleOfComponent: "Advanced ILL Techniques"
+  authorOfComponent: "Johnson, Jane"
+  sponsor: "National Library Foundation"
+  informationSource: "WorldCat"
+  patronIdentifier: "PAT-12345"
+  patronReference: "00123456"
+  patronSurname: "Brown"
+  patronGivenName: "Michael"
+  patronType: "Faculty"
+  sendToPatron: true
+  patronEmail: "michael.brown@university.edu"
+  patronNote: "Please use expedited delivery"
+  pickupLocation: "Main Library - Circulation Desk"
+  pickupLocationCode: "ML-CD"
+  pickupLocationSlug: "main-library-circulation"
+  resolvedPickupLocation:
+    id: "dir-1"
+    name: "Main Library - Circulation Desk"
+    code: "ML-CD"
+  pickupURL: "https://library.example.edu/pickup/main"
+  bibRecord: "<record><leader>...</leader></record>"
+  dateCreated: "2024-06-01T10:30:00Z"
+  lastUpdated: "2024-06-15T14:45:30Z"
+  neededBy: "2024-07-15"
+  localCallNumber: "PS3552.I63 Z83 2024"
+  hrid: "a1234567"
+  serviceType:
+    id: "svc-type-1"
+    value: "Loan"
+    label: "Loan"
+  serviceLevel:
+    id: "svc-level-1"
+    value: "Standard"
+    label: "Standard"
+  isRequester: true
+  stateModel:
+    id: "state-model-1"
+    name: "ILL Standard Workflow"
+    transitions: []
+  state:
+    id: "status-1"
+    value: "REQ_SENT_TO_SUPPLIER"
+    label: "Request sent to supplier"
+  numberOfRetries: 0
+  delayPerformingActionUntil: "2024-06-16T10:00:00Z"
+  preErrorStatus:
+    id: "status-2"
+    value: "REQ_PLACED_REMOTELY"
+    label: "Request placed remotely"
+  awaitingProtocolResponse: true
+  activeLoan: false
+  rotaPosition: 2
+  pickLocation:
+    id: "loc-1"
+    name: "Main Library"
+    code: "MAIN"
+  pickShelvingLocation:
+    id: "shelf-1"
+    name: "Circulation Desk"
+    code: "CD"
+  resolvedPatron:
+    id: "patron-1"
+    patron_name: "Michael Brown"
+    email: "michael.brown@university.edu"
+  needsAttention: false
+  unreadMessageCount: 0
+  hasUnreadMessages: false
+  dueDateFromLMS: "2024-07-20"
+  parsedDueDateFromLMS: "2024-07-20T23:59:59Z"
+  dueDateRS: "2024-07-20"
+  parsedDueDateRS: "2024-07-20T23:59:59Z"
+  overdue: false
+  cancellationReason: null
+  networkStatus:
+    status: "ACTIVE"
+    lastChecked: "2024-06-15T14:30:00Z"
+  lastSendAttempt: "2024-06-15T14:45:30Z"
+  nextSendAttempt: "2024-06-16T10:00:00Z"
+  lastProtocolData: "ISO18626_REQUEST_SENT"
+  numberOfSendAttempts: 1
+  lastSequenceSent: 1
+  lastAuditNo: 5
+  lastSequenceReceived: 0
+  sentISO18626RequestResponse: false
+  institution:
+    id: "inst-1"
+    name: "Research University Library"
+    symbol: "INST001"
+  currentProtocol:
+    id: "proto-1"
+    name: "ISO18626"
+    description: "ISO18626 Protocol"
+  copyright:
+    id: "copy-1"
+    copyrightIssuesPresent: false
+    clearanceRequested: false
+    clearanceReceiveDate: null
+    issuesToProcessingNote: null
+  documentDeliveryUrl: "https://library.example.edu/delivery/doc-001"
+  audit:
+    - id: "audit-1"
+      transactionType: "REQUEST_CREATED"
+      timestamp: "2024-06-01T10:30:00Z"
+  batches:
+    - id: "batch-1"
+      status: "ACTIVE"
+      createdDate: "2024-06-01T10:30:00Z"
+  conditions:
+    - id: "cond-1"
+      loanCondition: "Standard loan terms"
+      active: true
+  notifications:
+    - id: "notif-1"
+      type: "REQUEST_APPROVED"
+      sentDate: "2024-06-05T09:15:00Z"
+  protocolAudit:
+    - id: "proto-audit-1"
+      action: "ISO18626_REQUEST_SENT"
+      timestamp: "2024-06-01T10:35:00Z"
+  requestIdentifiers:
+    - id: "req-id-1"
+      identifier: "PEER-REQ-2024-001"
+      identifierType: "PEER_REQUEST_ID"
+  tags:
+    - "priority"
+    - "expedited"
+  volumes:
+    - id: "vol-1"
+      volumeNumber: "15"
+      issueNumber: "3"

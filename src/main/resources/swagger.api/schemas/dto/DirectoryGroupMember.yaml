@@ -1,0 +1,9 @@
+type: object
+properties:
+  directoryGroup:
+    $ref: 'DirectoryGroup.yaml'
+  directoryEntry:
+    $ref: 'DirectoryEntry.yaml'
+required:
+- directoryGroup
+- directoryEntry

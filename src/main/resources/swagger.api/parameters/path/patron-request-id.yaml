@@ -1,0 +1,7 @@
+name: patronRequestId
+in: path
+required: true
+schema:
+  type: string
+
+example: '3c3f172c-6874-4c56-88e1-2350a3d90320'

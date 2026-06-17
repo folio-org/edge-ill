@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: string
+  context:
+    type: string
+  description:
+    type: string
+  value:
+    type: integer
+    format: int64
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- context
+- value
+- institution

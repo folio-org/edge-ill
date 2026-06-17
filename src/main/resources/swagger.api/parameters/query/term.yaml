@@ -1,0 +1,5 @@
+name: term
+in: query
+required: false
+schema:
+  type: string

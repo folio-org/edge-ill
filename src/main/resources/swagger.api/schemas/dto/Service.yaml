@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  address:
+    type: string
+  type:
+    $ref: 'RefdataValue.yaml'
+  status:
+    $ref: 'RefdataValue.yaml'
+  businessFunction:
+    $ref: 'RefdataValue.yaml'
+  tags:
+    type: array
+    items:
+      type: object
+required:
+- address
+- type

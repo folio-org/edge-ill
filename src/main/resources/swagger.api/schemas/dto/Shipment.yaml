@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    type: string
+  shippingLibrary:
+    $ref: 'DirectoryEntry.yaml'
+  receivingLibrary:
+    $ref: 'DirectoryEntry.yaml'
+  shipmentMethod:
+    $ref: 'RefdataValue.yaml'
+  trackingNumber:
+    type: string
+  status:
+    $ref: 'RefdataValue.yaml'
+  shipDate:
+    type: string
+    format: date-time
+  receivedDate:
+    type: string
+    format: date-time
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time

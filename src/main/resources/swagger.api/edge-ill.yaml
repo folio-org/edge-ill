@@ -12,3 +12,562 @@ paths:
   ## Application API
   /illService/tenants/{tenantId}:
     $ref: 'paths/application/ill.yaml'
+
+
+  ### Available Action API
+  /illService/availableAction/createGraph/{stateModel}:
+    $ref: 'paths/available-action/create-graph.yaml'
+
+  /illService/availableAction/fromStates/{stateModel}/{actionCode}:
+    $ref: 'paths/available-action/from-states.yaml'
+
+  /illService/availableAction/toStates/{stateModel}/{actionCode}:
+    $ref: 'paths/available-action/to-states.yaml'
+
+
+  ### Batch API
+  /illService/batch:
+    $ref: 'paths/batch/batch.yaml'
+
+  /illService/batch/{id}:
+    $ref: 'paths/batch/batch-by-id.yaml'
+
+
+  ### Copyright Message API
+  /illService/copyrightMessage:
+    $ref: 'paths/copyright-message/copyright-message.yaml'
+
+  /illService/copyrightMessage/createEditDetails:
+    $ref: 'paths/copyright-message/create-edit-details.yaml'
+
+  /illService/copyrightMessage/{id}:
+    $ref: 'paths/copyright-message/copyright-message-by-id.yaml'
+
+
+  ### Custom Property API
+  /illService/custprops:
+    $ref: 'paths/custprops/custprops.yaml'
+
+  /illService/custprops/{id}:
+    $ref: 'paths/custprops/custprops-by-id.yaml'
+
+
+  ### Directory API
+  /illService/directory/api/addFriend:
+    $ref: 'paths/directory/api-add-friend.yaml'
+
+  /illService/directory/api/findSymbol:
+    $ref: 'paths/directory/api-find-symbol.yaml'
+
+  /illService/directory/api/freshen:
+    $ref: 'paths/directory/api-freshen.yaml'
+
+  /illService/directory/entry:
+    $ref: 'paths/directory/entry.yaml'
+
+  /illService/directory/entry/validate:
+    $ref: 'paths/directory/entry-validate.yaml'
+
+  /illService/directory/entry/{id}:
+    $ref: 'paths/directory/entry-by-id.yaml'
+
+  /illService/directory/namingAuthority:
+    $ref: 'paths/directory/naming-authority.yaml'
+
+  /illService/directory/namingAuthority/{id}:
+    $ref: 'paths/directory/naming-authority-by-id.yaml'
+
+  /illService/directory/service:
+    $ref: 'paths/directory/service.yaml'
+
+  /illService/directory/service/{id}:
+    $ref: 'paths/directory/service-by-id.yaml'
+
+  /illService/directory/serviceAccount:
+    $ref: 'paths/directory/service-account.yaml'
+
+  /illService/directory/serviceAccount/{id}:
+    $ref: 'paths/directory/service-account-by-id.yaml'
+
+  /illService/directory/serviceCredential:
+    $ref: 'paths/directory/service-credential.yaml'
+
+  /illService/directory/serviceCredential/{id}:
+    $ref: 'paths/directory/service-credential-by-id.yaml'
+
+  /illService/directory/symbol:
+    $ref: 'paths/directory/symbol.yaml'
+
+  /illService/directory/symbol/{id}:
+    $ref: 'paths/directory/symbol-by-id.yaml'
+
+
+  ### Directory Groups API
+  /illService/directoryGroup:
+    $ref: 'paths/directory-group/directory-group.yaml'
+
+  /illService/directoryGroup/{id}:
+    $ref: 'paths/directory-group/directory-group-by-id.yaml'
+
+  /illService/directoryGroup/{id}/modifyMembers:
+    $ref: 'paths/directory-group/modify-members.yaml'
+
+  /illService/directoryGroups:
+    $ref: 'paths/directory-groups/directory-groups.yaml'
+
+  /illService/directoryGroups/{id}:
+    $ref: 'paths/directory-groups/directory-groups-by-id.yaml'
+
+  /illService/directoryGroups/{id}/modifyMembers:
+    $ref: 'paths/directory-groups/modify-members.yaml'
+
+  ### Document Delivery Server API
+  /illService/documentDeliveryServer:
+    $ref: 'paths/document-delivery-server/document-delivery-server.yaml'
+
+  /illService/documentDeliveryServer/createEditDetails:
+    $ref: 'paths/document-delivery-server/create-edit-details.yaml'
+
+  /illService/documentDeliveryServer/register:
+    $ref: 'paths/document-delivery-server/register.yaml'
+
+  /illService/documentDeliveryServer/{id}:
+    $ref: 'paths/document-delivery-server/document-delivery-server-by-id.yaml'
+
+
+  ### External API - Public Endpoints
+  /illService/tenants/{tenantId}/externalApi/directoryEntry:
+    $ref: 'paths/external-api/directory-entry.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/iso18626:
+    $ref: 'paths/external-api/iso18626.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/statistics:
+    $ref: 'paths/external-api/statistics.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/statusReport:
+    $ref: 'paths/external-api/status-report.yaml'
+
+
+  ### File Definition API
+  /illService/fileDefinition/fileDownload/{id}:
+    $ref: 'paths/file-definition/file-download.yaml'
+
+  /illService/fileDefinition/fileUpload:
+    $ref: 'paths/file-definition/file-upload.yaml'
+
+  /illService/fileDefinition/{id}:
+    $ref: 'paths/file-definition/file-definition-by-id.yaml'
+
+
+  ### File Storage API
+  /illService/fileStorage/createEditDetails:
+    $ref: 'paths/file-storage/create-edit-details.yaml'
+
+
+  ### Host LMS Item Loan Policy API
+  /illService/hostLMSItemLoanPolicy:
+    $ref: 'paths/host-lms-item-loan-policy/host-lms-item-loan-policy.yaml'
+
+  /illService/hostLMSItemLoanPolicy/{id}:
+    $ref: 'paths/host-lms-item-loan-policy/host-lms-item-loan-policy-by-id.yaml'
+
+
+  ### Host LMS Locations API
+  /illService/hostLMSLocations:
+    $ref: 'paths/host-lms-locations/host-lms-locations.yaml'
+
+  /illService/hostLMSLocations/{id}:
+    $ref: 'paths/host-lms-locations/host-lms-locations-by-id.yaml'
+
+
+  ### Host LMS Patron Profiles API
+  /illService/hostLMSPatronProfiles:
+    $ref: 'paths/host-lms-patron-profiles/host-lms-patron-profiles.yaml'
+
+  /illService/hostLMSPatronProfiles/{id}:
+    $ref: 'paths/host-lms-patron-profiles/host-lms-patron-profiles-by-id.yaml'
+
+
+  ### SMTP Message API
+  /illService/illSmtpMessage:
+    $ref: 'paths/ill-smtp-message/ill-smtp-message.yaml'
+
+  /illService/illSmtpMessage/createEditDetails:
+    $ref: 'paths/ill-smtp-message/create-edit-details.yaml'
+
+  /illService/illSmtpMessage/tokenValues/{id}:
+    $ref: 'paths/ill-smtp-message/token-values.yaml'
+
+  /illService/illSmtpMessage/{id}:
+    $ref: 'paths/ill-smtp-message/ill-smtp-message-by-id.yaml'
+
+
+  ### Institution API
+  /illService/institution:
+    $ref: 'paths/institution/institution.yaml'
+
+  /illService/institution/createEditDetails:
+    $ref: 'paths/institution/create-edit-details.yaml'
+
+  /illService/institution/{id}:
+    $ref: 'paths/institution/institution-by-id.yaml'
+
+  /illService/institution/{id}/modifyGroups:
+    $ref: 'paths/institution/modify-groups.yaml'
+
+  /illService/institution/{id}/users:
+    $ref: 'paths/institution/users.yaml'
+
+
+  ### Institution Group API
+  /illService/institutionGroup:
+    $ref: 'paths/institution-group/institution-group.yaml'
+
+  /illService/institutionGroup/createEditDetails:
+    $ref: 'paths/institution-group/create-edit-details.yaml'
+
+  /illService/institutionGroup/{id}:
+    $ref: 'paths/institution-group/institution-group-by-id.yaml'
+
+  /illService/institutionGroup/{id}/modifyInstitutions:
+    $ref: 'paths/institution-group/modify-institutions.yaml'
+
+  /illService/institutionGroup/{id}/modifyUsers:
+    $ref: 'paths/institution-group/modify-users.yaml'
+
+
+  ### Institution User API
+  /illService/institutionUser:
+    $ref: 'paths/institution-user/institution-user.yaml'
+
+  /illService/institutionUser/canManage:
+    $ref: 'paths/institution-user/can-manage.yaml'
+
+  /illService/institutionUser/createEditDetails:
+    $ref: 'paths/institution-user/create-edit-details.yaml'
+
+  /illService/institutionUser/manageInstitution:
+    $ref: 'paths/institution-user/manage-institution.yaml'
+
+  /illService/institutionUser/{id}:
+    $ref: 'paths/institution-user/institution-user-by-id.yaml'
+
+  /illService/institutionUser/{id}/institutions:
+    $ref: 'paths/institution-user/institutions.yaml'
+
+  /illService/institutionUser/{id}/modifyGroups:
+    $ref: 'paths/institution-user/modify-groups.yaml'
+
+
+  ### KIWT API
+  /illService/kiwt/raml:
+    $ref: 'paths/kiwt/raml.yaml'
+
+
+  ### Logging API
+  /illService/logging:
+    $ref: 'paths/logging/logging.yaml'
+
+
+  ### Notice Event API
+  /illService/noticeEvent:
+    $ref: 'paths/notice-event/notice-event.yaml'
+
+  /illService/noticeEvent/{id}:
+    $ref: 'paths/notice-event/notice-event-by-id.yaml'
+
+
+  ### Notice Policies API
+  /illService/noticePolicies:
+    $ref: 'paths/notice-policies/notice-policies.yaml'
+
+  /illService/noticePolicies/{id}:
+    $ref: 'paths/notice-policies/notice-policies-by-id.yaml'
+
+
+  ### Patron API
+  /illService/patron:
+    $ref: 'paths/patron/patron.yaml'
+
+  /illService/patron/{id}:
+    $ref: 'paths/patron/patron-by-id.yaml'
+
+  /illService/patron/{id}/canCreateRequest:
+    $ref: 'paths/patron/can-create-request.yaml'
+
+
+  ### Patron Requests API
+  /illService/patronrequests:
+    $ref: 'paths/patronrequests/patron-requests.yaml'
+
+  /illService/patronrequests/bulkAction:
+    $ref: 'paths/patronrequests/bulk-action.yaml'
+
+  /illService/patronrequests/generatePickListBatch:
+    $ref: 'paths/patronrequests/generate-pick-list-batch.yaml'
+
+  /illService/patronrequests/markBatchAsPrinted:
+    $ref: 'paths/patronrequests/mark-batch-as-printed.yaml'
+
+  /illService/patronrequests/newRequestDetails:
+    $ref: 'paths/patronrequests/new-request-details.yaml'
+
+  /illService/patronrequests/{id}:
+    $ref: 'paths/patronrequests/patron-requests-by-id.yaml'
+
+  /illService/patronrequests/{id}/manualCloseStates:
+    $ref: 'paths/patronrequests/manual-close-states.yaml'
+
+  /illService/patronrequests/{id}/noticeTokenValues:
+    $ref: 'paths/patronrequests/notice-token-values.yaml'
+
+  /illService/patronrequests/{id}/performAction:
+    $ref: 'paths/patronrequests/perform-action.yaml'
+
+  /illService/patronrequests/{id}/validActions:
+    $ref: 'paths/patronrequests/valid-actions.yaml'
+
+  /illService/patronrequests/{id}/performActionWithFile:
+    $ref: 'paths/patronrequests/perform-action-with-file.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/openURL:
+    $ref: 'paths/patronrequests/open-url.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/agreeCopyright:
+    $ref: 'paths/patronrequests/agree-copyright.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/fetchCopyright:
+    $ref: 'paths/patronrequests/fetch-copyright.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/viewDocument:
+    $ref: 'paths/patronrequests/view-document.yaml'
+
+
+  ### Protocol API
+  /illService/protocol:
+    $ref: 'paths/protocol/protocol.yaml'
+
+  /illService/protocol/{id}:
+    $ref: 'paths/protocol/protocol-by-id.yaml'
+
+
+  ### Reference Data API
+  /illService/refdata:
+    $ref: 'paths/refdata/refdata.yaml'
+
+  /illService/refdata/{id}:
+    $ref: 'paths/refdata/refdata-by-id.yaml'
+
+  /illService/refdata/{id}/{property}:
+    $ref: 'paths/refdata/refdata-by-id-property.yaml'
+
+
+  ### Remote Action API
+  /illService/remoteAction:
+    $ref: 'paths/remote-action/remote-action.yaml'
+
+  /illService/remoteAction/{id}:
+    $ref: 'paths/remote-action/remote-action-by-id.yaml'
+
+  /illService/tenants/{tenantId}/remoteAction/{id}/perform:
+    $ref: 'paths/remote-action/perform.yaml'
+
+
+  ### Report API
+  /illService/report/createUpdate:
+    $ref: 'paths/report/create-update.yaml'
+
+  /illService/report/execute:
+    $ref: 'paths/report/execute.yaml'
+
+  /illService/report/generatePicklist:
+    $ref: 'paths/report/generate-picklist.yaml'
+
+
+  ### Search API
+  /illService/search:
+    $ref: 'paths/search/search.yaml'
+
+  /illService/search/{id}:
+    $ref: 'paths/search/search-by-id.yaml'
+
+
+  ### Search Attribute API
+  /illService/searchAttribute:
+    $ref: 'paths/search-attribute/search-attribute.yaml'
+
+  /illService/searchAttribute/{id}:
+    $ref: 'paths/search-attribute/search-attribute-by-id.yaml'
+
+
+  ### Search Group API
+  /illService/searchGroup:
+    $ref: 'paths/search-group/search-group.yaml'
+
+  /illService/searchGroup/{id}:
+    $ref: 'paths/search-group/search-group-by-id.yaml'
+
+
+  ### Search Tree API
+  /illService/searchTree:
+    $ref: 'paths/search-tree/search-tree.yaml'
+
+  /illService/searchTree/{id}:
+    $ref: 'paths/search-tree/search-tree-by-id.yaml'
+
+
+  ### Settings API
+  /illService/settings/institutionSetting:
+    $ref: 'paths/settings/institution-setting.yaml'
+
+  /illService/settings/institutionSetting/{id}:
+    $ref: 'paths/settings/institution-setting-by-id.yaml'
+
+  /illService/settings/systemSetting:
+    $ref: 'paths/settings/system-setting.yaml'
+
+  /illService/settings/systemSetting/{id}:
+    $ref: 'paths/settings/system-setting-by-id.yaml'
+
+
+  ### Shared Index Query API
+  /illService/sharedIndexQuery:
+    $ref: 'paths/shared-index-query/shared-index-query.yaml'
+
+  /illService/sharedIndexQuery/availability:
+    $ref: 'paths/shared-index-query/availability.yaml'
+
+  /illService/sharedIndexQuery/byId:
+    $ref: 'paths/shared-index-query/by-id.yaml'
+
+  /illService/sharedIndexQuery/byQuery:
+    $ref: 'paths/shared-index-query/by-query.yaml'
+
+  /illService/sharedIndexQuery/findMoreSuppliers:
+    $ref: 'paths/shared-index-query/find-more-suppliers.yaml'
+
+  /illService/sharedIndexQuery/token:
+    $ref: 'paths/shared-index-query/token.yaml'
+
+
+  ### Shelving Location Sites API
+  /illService/shelvingLocationSites:
+    $ref: 'paths/shelving-location-sites/shelving-location-sites.yaml'
+
+  /illService/shelvingLocationSites/{id}:
+    $ref: 'paths/shelving-location-sites/shelving-location-sites-by-id.yaml'
+
+
+  ### Shelving Locations API
+  /illService/shelvingLocations:
+    $ref: 'paths/shelving-locations/shelving-locations.yaml'
+
+  /illService/shelvingLocations/{id}:
+    $ref: 'paths/shelving-locations/shelving-locations-by-id.yaml'
+
+
+  ### Shipments API
+  /illService/shipments:
+    $ref: 'paths/shipments/shipments.yaml'
+
+  /illService/shipments/{id}:
+    $ref: 'paths/shipments/shipments-by-id.yaml'
+
+
+  ### State Model API
+  /illService/stateModel/export:
+    $ref: 'paths/state-model/export.yaml'
+
+  /illService/stateModel/getValidActions:
+    $ref: 'paths/state-model/get-valid-actions.yaml'
+
+  /illService/stateModel/import:
+    $ref: 'paths/state-model/import.yaml'
+
+
+  ### Statistics API
+  /illService/statistics:
+    $ref: 'paths/statistics/statistics.yaml'
+
+  /illService/statistics/forSymbol:
+    $ref: 'paths/statistics/for-symbol.yaml'
+
+
+  ### Status API
+  /illService/status:
+    $ref: 'paths/status/status.yaml'
+
+  /illService/status/{id}:
+    $ref: 'paths/status/status-by-id.yaml'
+
+
+  ### Tags API
+  /illService/tags:
+    $ref: 'paths/tags/tags.yaml'
+
+  /illService/tags/{id}:
+    $ref: 'paths/tags/tags-by-id.yaml'
+
+
+  ### Template API
+  /illService/template:
+    $ref: 'paths/template/template.yaml'
+
+  /illService/template/createEditDetails:
+    $ref: 'paths/template/create-edit-details.yaml'
+
+  /illService/template/{id}:
+    $ref: 'paths/template/template-by-id.yaml'
+
+
+  ### Test Document Delivery
+  /illService/tenants/{tenantId}/testDocumentDelivery/offer:
+    $ref: 'paths/test-document-delivery/offer.yaml'
+
+  /illService/tenants/{tenantId}/testDocumentDelivery/register:
+    $ref: 'paths/test-document-delivery/register.yaml'
+
+
+  ### Test External Search API
+  /illService/testExternalSearch/locate:
+    $ref: 'paths/test-external-search/locate.yaml'
+
+  /illService/testExternalSearch/performSearch:
+    $ref: 'paths/test-external-search/perform-search.yaml'
+
+
+  ### Test Host LMS API
+  /illService/testHostLMS/acceptItem:
+    $ref: 'paths/test-host-lms/accept-item.yaml'
+
+  /illService/testHostLMS/checkIn:
+    $ref: 'paths/test-host-lms/check-in.yaml'
+
+  /illService/testHostLMS/checkOut:
+    $ref: 'paths/test-host-lms/check-out.yaml'
+
+  /illService/testHostLMS/determineBestLocation:
+    $ref: 'paths/test-host-lms/determine-best-location.yaml'
+
+  /illService/testHostLMS/directZ3950:
+    $ref: 'paths/test-host-lms/direct-z3950.yaml'
+
+  /illService/testHostLMS/validate:
+    $ref: 'paths/test-host-lms/validate.yaml'
+
+
+  ### Test Routing API
+  /illService/testRouting/findMoreSuppliers:
+    $ref: 'paths/test-routing/find-more-suppliers.yaml'
+
+
+  ### Timers API
+  /illService/timers:
+    $ref: 'paths/timers/timers.yaml'
+
+  /illService/timers/execute:
+    $ref: 'paths/timers/execute.yaml'
+
+  /illService/timers/{id}:
+    $ref: 'paths/timers/timers-by-id.yaml'

@@ -1,0 +1,9 @@
+type: object
+properties:
+  search:
+    $ref: 'Search.yaml'
+  hostLmsType:
+    $ref: 'RefdataValue.yaml'
+required:
+- search
+- hostLmsType

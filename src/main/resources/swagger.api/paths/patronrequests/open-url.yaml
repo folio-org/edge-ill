@@ -1,0 +1,103 @@
+get:
+  tags: [ PatronRequests ]
+  description: "Get OpenURL for patron; Interprets an OpenUrl version 0.1 or 1.0"
+  operationId: getOpenURL
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - name: queryParameters
+      in: query
+      required: false
+      description: |
+        Interprets an OpenURL version 0.1 or 1.0.
+
+        All parameters are accepted as query parameters and passed as a map containing:
+
+        **Request Parameters (v1.0):**
+        - req.emailAddress: Requester email address
+        - req.id: Requester ID
+
+        **Referent Metadata Parameters (v1.0):**
+        - rft.artnum: Article number
+        - rft.atitle: Article title
+        - rft.au: Author
+        - rft.aufirst: Author first name
+        - rft.auinitl: Author initials (last)
+        - rft.auinit: Author initials
+        - rft.auinitm: Author initials (middle)
+        - rft.aulast: Author last name
+        - rft.bici: Book item and contribution identifier
+        - rft.btitle: Book title
+        - rft.coden: CODEN identifier
+        - rft.creator: Creator
+        - rft.edition: Edition
+        - rft.eissn: Electronic ISSN
+        - rft.genre: Genre/type of resource
+        - rft.identifier.illiad: ILLiad identifier
+        - rft.isbn: ISBN
+        - rft.issn: ISSN
+        - rft.issue: Issue number
+        - rft.jtitle: Journal title
+        - rft.epage: End page
+        - rft.spage: Start page
+        - rft.pages: Total pages
+        - rft.part: Part
+        - rft.date: Publication date
+        - rft.place: Place of publication
+        - rft.pub: Publisher
+        - rft.quarter: Quarter
+        - rft.sici: Serial Item and Contribution Identifier
+        - rft.ssn: Serial Standard Number
+        - rft.title: Title
+        - rft.volume: Volume
+
+        **Service Parameters (v1.0):**
+        - svc.neededBy: Service needed by date
+        - svc.note: Service note
+        - svc.pickupLocation: Service pickup location
+        - svc.id: Service ID
+
+        **Legacy Parameters (v0.1):**
+        - artnum: Article Number
+        - aufirst: Author first name
+        - auinitl: Author first initial
+        - auinit: Author middle initial
+        - aulast: Author last name
+        - auinitm: Author middle initial
+        - bici: BICI
+        - bici: BICI
+        - coden: Coden
+        - genre: Genre
+        - issn: ISSN
+        - eissn: EISSN
+        - isbn: ISBN
+        - issue: Issue
+        - epage: End Page
+        - spage: Start Page
+        - pages: Number Of Pages
+        - part: Part
+        - pickupLocation: Pickup location
+        - date: Date
+        - quarter: Quarter
+        - ssn: SSN
+        - sici: SICI
+        - sharedIndexId: Shared index ID
+        - title: Title
+        - stitle: Abbreviated title
+        - atitle: Article title
+        - volume: Volume
+      explode: true
+      schema:
+        type: object
+        additionalProperties:
+          type: string
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/dto/GenericResult.yaml'
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

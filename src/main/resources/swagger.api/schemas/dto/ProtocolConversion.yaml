@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: string
+  context:
+    type: string
+  internalValue:
+    type: string
+  protocolValue:
+    type: string
+  protocol:
+    $ref: 'Protocol.yaml'
+required:
+- context
+- internalValue
+- protocolValue
+- protocol

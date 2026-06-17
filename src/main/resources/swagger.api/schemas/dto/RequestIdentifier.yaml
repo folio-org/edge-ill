@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: string
+  identifierType:
+    type: string
+  identifier:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+required:
+- identifierType
+- identifier
+- patronRequest

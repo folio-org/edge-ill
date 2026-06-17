@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  isAction:
+    type: boolean
+  resultList:
+    $ref: 'ActionEventResultList.yaml'
+  undoStatus:
+    $ref: '../types/UndoStatus.yaml'
+  serviceClass:
+    type: string
+  responderServiceClass:
+    type: string
+  isAvailableGroovy:
+    type: string
+  isAvailableForBulk:
+    type: boolean
+  showInAuditTrail:
+    type: boolean
+required:
+- code
+- description
+- isAction

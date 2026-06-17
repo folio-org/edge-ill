@@ -1,0 +1,5 @@
+name: property
+in: path
+required: true
+schema:
+  type: string

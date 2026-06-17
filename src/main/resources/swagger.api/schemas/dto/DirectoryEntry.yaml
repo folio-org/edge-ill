@@ -1,0 +1,83 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  slug:
+    type: string
+  description:
+    type: string
+  foafUrl:
+    type: string
+  entryUrl:
+    type: string
+  phoneNumber:
+    type: string
+  emailAddress:
+    type: string
+  contactName:
+    type: string
+  brandingUrl:
+    type: string
+  pubLastUpdate:
+    type: integer
+    format: int64
+  type:
+    $ref: 'RefdataValue.yaml'
+  lmsLocationCode:
+    type: string
+  foafTimestamp:
+    type: integer
+    format: int64
+  parent:
+    $ref: 'DirectoryEntry.yaml'
+  searchDirectoryGroups:
+    $ref: 'DirectoryGroups.yaml'
+  searches:
+    $ref: 'SearchGroup.yaml'
+  hostLmsType:
+    $ref: 'RefdataValue.yaml'
+  authorityForSymbolResolution:
+    $ref: 'NamingAuthority.yaml'
+  friends:
+    type: array
+    items:
+      $ref: 'FriendAssertion.yaml'
+  units:
+    type: array
+    items:
+      $ref: 'DirectoryEntry.yaml'
+  symbols:
+    type: array
+    items:
+      $ref: 'Symbol.yaml'
+  services:
+    type: array
+    items:
+      $ref: 'ServiceAccount.yaml'
+  announcements:
+    type: array
+    items:
+      $ref: 'Announcement.yaml'
+  addresses:
+    type: array
+    items:
+      $ref: 'Address.yaml'
+  members:
+    type: array
+    items:
+      $ref: 'GroupMember.yaml'
+  directoryGroupMembers:
+    type: array
+    items:
+      $ref: 'DirectoryGroupMember.yaml'
+  status:
+    $ref: 'RefdataValue.yaml'
+  canEdit:
+    type: object
+  determinedHostLms:
+    type: string
+required:
+- name
+- slug

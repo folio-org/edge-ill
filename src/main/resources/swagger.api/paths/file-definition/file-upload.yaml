@@ -1,0 +1,13 @@
+post:
+  tags: [ FileDefinition ]
+  description: "File upload"
+  operationId: fileDefinitionFileUpload
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

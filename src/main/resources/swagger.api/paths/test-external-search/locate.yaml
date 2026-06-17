@@ -1,0 +1,13 @@
+get:
+  tags: [ TestExternalSearch ]
+  description: "Locate an item externally"
+  operationId: testExternalSearchLocate
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

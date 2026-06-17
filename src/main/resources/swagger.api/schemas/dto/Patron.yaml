@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+  hostSystemIdentifier:
+    type: string
+  givenname:
+    type: string
+  surname:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  userProfile:
+    type: string
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- hostSystemIdentifier
+- institution

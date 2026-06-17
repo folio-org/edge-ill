@@ -1,0 +1,23 @@
+get:
+  tags: [ Logging ]
+  description: "Sets the log level for the specified class, returning what it was set to previously"
+  operationId: findLoggings
+  parameters:
+    - $ref: '../../parameters/query/term.yaml'
+    - $ref: '../../parameters/query/match.yaml'
+    - $ref: '../../parameters/query/filters.yaml'
+    - $ref: '../../parameters/query/sort.yaml'
+    - $ref: '../../parameters/query/max.yaml'
+    - $ref: '../../parameters/query/per-page.yaml'
+    - $ref: '../../parameters/query/offset.yaml'
+    - $ref: '../../parameters/query/page.yaml'
+    - $ref: '../../parameters/query/stats.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

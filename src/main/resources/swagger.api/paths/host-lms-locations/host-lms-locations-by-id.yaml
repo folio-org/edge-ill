@@ -1,0 +1,57 @@
+get:
+  tags: [ HostLMSLocations ]
+  description: "Returns the supplied record"
+  operationId: getHostLMSLocationsById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+put:
+  tags: [ HostLMSLocations ]
+  description: "Updates the record with the supplied data"
+  operationId: putHostLMSLocationsById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+delete:
+  tags: [ HostLMSLocations ]
+  description: "Deletes the record with the supplied identifier"
+  operationId: deleteHostLMSLocationsById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '204':
+      description: No content
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

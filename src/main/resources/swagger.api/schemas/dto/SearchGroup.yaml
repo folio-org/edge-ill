@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  members:
+    type: array
+    items:
+      $ref: 'SearchGroupEntry.yaml'
+required:
+- code
+- description

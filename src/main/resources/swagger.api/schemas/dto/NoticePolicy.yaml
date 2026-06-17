@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  active:
+    type: boolean
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  institution:
+    $ref: 'Institution.yaml'
+  notices:
+    type: array
+    items:
+      $ref: 'NoticePolicyNotice.yaml'
+required:
+- institution

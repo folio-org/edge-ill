@@ -1,0 +1,13 @@
+get:
+  tags: [ Template ]
+  description: "Details required for creating or editing a template container"
+  operationId: templateCreateEditDetails
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

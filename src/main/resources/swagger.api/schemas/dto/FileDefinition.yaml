@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  fileType:
+    $ref: '../types/FileType.yaml'
+  description:
+    type: string
+  fileUpload:
+    type: object
+required:
+- fileType
+- description
+- fileUpload

@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    type: string
+  country:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  message:
+    type: string
+  hide:
+    type: boolean
+required:
+- country
+- code
+- description
+- message

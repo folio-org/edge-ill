@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: string
+  seq:
+    type: integer
+    format: int64
+  type:
+    $ref: 'RefdataValue.yaml'
+  value:
+    type: string
+  owner:
+    $ref: 'Address.yaml'
+required:
+- seq
+- type
+- value

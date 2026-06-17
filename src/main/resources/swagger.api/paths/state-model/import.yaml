@@ -1,0 +1,19 @@
+post:
+  tags: [ StateModel ]
+  description: "Imports the json file that is equivalent to what is created by an export"
+  operationId: stateModelImport
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

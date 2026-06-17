@@ -1,0 +1,28 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  result:
+    type: boolean
+  qualifier:
+    type: string
+  status:
+    $ref: 'Status.yaml'
+  overrideSaveStatus:
+    $ref: 'Status.yaml'
+  saveRestoreState:
+    $ref: 'RefdataValue.yaml'
+  fromStatus:
+    $ref: 'Status.yaml'
+  updateRotaLocation:
+    type: boolean
+  nextActionEvent:
+    $ref: 'ActionEvent.yaml'
+required:
+- code
+- description
+- result

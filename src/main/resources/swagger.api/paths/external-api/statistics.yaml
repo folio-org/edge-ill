@@ -1,0 +1,13 @@
+get:
+  tags: [ ExternalApi ]
+  description: "Return the statistics"
+  operationId: externalApiStatistics
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

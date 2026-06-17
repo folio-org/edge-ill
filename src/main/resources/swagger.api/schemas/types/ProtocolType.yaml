@@ -1,0 +1,8 @@
+type: string
+enum:
+  - 'ISO18626'
+  - 'NCIP'
+  - 'SHARED_INDEX'
+  - 'Z3950_REQUESTER'
+  - 'Z3950_RESPONDER'
+

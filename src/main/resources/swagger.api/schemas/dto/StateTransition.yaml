@@ -1,0 +1,14 @@
+type: object
+properties:
+  id:
+    type: string
+  model:
+    $ref: 'StateModel.yaml'
+  fromState:
+    $ref: 'Status.yaml'
+  actionCode:
+    type: string
+required:
+- model
+- fromState
+- actionCode

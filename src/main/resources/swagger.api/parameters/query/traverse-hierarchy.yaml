@@ -1,0 +1,5 @@
+name: traverseHierarchy
+in: query
+required: false
+schema:
+  type: boolean

@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: string
+  stateModel:
+    $ref: 'StateModel.yaml'
+  state:
+    $ref: 'Status.yaml'
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+required:
+- stateModel

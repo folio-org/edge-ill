@@ -1,0 +1,13 @@
+post:
+  tags: [ Report ]
+  description: "Create / Update a report"
+  operationId: reportCreateUpdate
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

@@ -1,0 +1,18 @@
+type: object
+properties:
+  id:
+    type: string
+  description:
+    type: string
+  context:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  isRequester:
+    type: boolean
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- description
+- context

@@ -1,0 +1,13 @@
+get:
+  tags: [ DocumentDeliveryServer ]
+  description: "Details required for creating a document delivery server"
+  operationId: documentDeliveryServerCreateEditDetails
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

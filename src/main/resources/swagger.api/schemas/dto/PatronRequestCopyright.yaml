@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  copyrightMessage:
+    $ref: 'CopyrightMessage.yaml'
+  agreedDate:
+    type: string
+    format: date-time
+  userId:
+    type: string
+  copyrightText:
+    type: string
