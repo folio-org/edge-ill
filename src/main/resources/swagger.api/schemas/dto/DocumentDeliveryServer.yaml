@@ -1,0 +1,25 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  baseUrl:
+    type: string
+  publicKey:
+    type: string
+  privateKey:
+    type: string
+  serverInstitutionId:
+    type: string
+  institution:
+    $ref: 'Institution.yaml'
+  usedToSupplyDocuments:
+    type: boolean
+required:
+- baseUrl
+- publicKey
+- privateKey
+- serverInstitutionId
+- institution

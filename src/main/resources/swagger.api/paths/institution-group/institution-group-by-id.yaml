@@ -1,0 +1,57 @@
+get:
+  tags: [ InstitutionGroup ]
+  description: "Returns the supplied record"
+  operationId: getInstitutionGroupById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+put:
+  tags: [ InstitutionGroup ]
+  description: "Updates the record with the supplied data"
+  operationId: putInstitutionGroupById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+delete:
+  tags: [ InstitutionGroup ]
+  description: "Deletes the record with the supplied identifier"
+  operationId: deleteInstitutionGroupById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '204':
+      description: No content
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

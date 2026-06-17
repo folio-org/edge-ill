@@ -1,0 +1,5 @@
+name: includeTerminal
+in: query
+required: false
+schema:
+  type: boolean

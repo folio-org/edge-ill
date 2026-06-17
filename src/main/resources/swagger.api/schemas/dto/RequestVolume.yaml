@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  itemId:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  temporaryItemBarcode:
+    type: string
+  status:
+    $ref: 'RefdataValue.yaml'

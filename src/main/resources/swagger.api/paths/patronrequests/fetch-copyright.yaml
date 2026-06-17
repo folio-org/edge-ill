@@ -1,0 +1,20 @@
+get:
+  tags: [ PatronRequests ]
+  description: "Fetch the copyright details for the patron request"
+  operationId: fetchCopyright
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - $ref: '../../parameters/path/patron-request-id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+            schema:
+              $ref: '../../schemas/responses/FetchPatronRequestCopyrightResponse.yaml'
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

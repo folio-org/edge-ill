@@ -1,0 +1,21 @@
+get:
+  tags: [ AvailableAction ]
+  description: List the states that a request can end up in after the action has been performed
+  operationId: getAvailableActionsToStates
+  parameters:
+    - $ref: '../../parameters/path/state-model.yaml'
+    - $ref: '../../parameters/path/action-code.yaml'
+    - $ref: '../../parameters/query/traverse-hierarchy.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/responses/AvailableActionsToState.yaml'
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

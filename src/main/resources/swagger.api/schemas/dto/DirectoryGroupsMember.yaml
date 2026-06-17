@@ -1,0 +1,12 @@
+type: object
+properties:
+  directoryGroups:
+    $ref: 'DirectoryGroups.yaml'
+  directoryGroup:
+    $ref: 'DirectoryGroup.yaml'
+  rank:
+    type: integer
+    format: int32
+required:
+- directoryGroups
+- directoryGroup

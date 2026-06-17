@@ -1,0 +1,37 @@
+{
+  "request": {
+    "urlPath": "/ill/patronrequests/openURL",
+    "queryParameters": {
+      "rft.artnum": {
+        "equalTo": "artnum123456"
+      },
+      "rft.atitle": {
+        "equalTo": "Example Article Title"
+      },
+      "rft.aufirst": {
+        "equalTo": "John"
+      },
+      "rft.aulast": {
+        "equalTo": "Doe"
+      },
+      "rft.bici": {
+        "equalTo": "Journal of Testing, Vol. 10, No. 2, 2024"
+      }
+    },
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+     },
+    "jsonBody": {
+      "result": "SUCCESS",
+      "id": "a34326ce-4cdb-4870-bcab-d04d8c06f46b"
+    }
+  }
+}

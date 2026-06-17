@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    type: string
+  locality:
+    type: string
+  template:
+    $ref: 'Template.yaml'
+  owner:
+    $ref: 'TemplateContainer.yaml'

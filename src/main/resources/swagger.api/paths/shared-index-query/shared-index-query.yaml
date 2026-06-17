@@ -1,0 +1,13 @@
+get:
+  tags: [ SharedIndexQuery ]
+  description: "Performs a pass through query to the configured shared index, this will be removed so clients do not need to know about the shared index"
+  operationId: sharedIndexQuery
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

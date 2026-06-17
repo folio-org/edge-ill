@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  members:
+    type: array
+    items:
+      $ref: 'DirectoryGroupMember.yaml'
+  groupsMembership:
+    type: string
+  myInstitutionPartOfGroup:
+    type: boolean
+  numberOfInstitutions:
+    type: integer
+    format: int64
+required:
+- code
+- description

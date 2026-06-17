@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  recipient:
+    type: string
+  subject:
+    type: string
+  body:
+    type: string
+  format:
+    type: string
+required:
+- recipient
+- subject
+- body

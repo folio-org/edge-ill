@@ -1,0 +1,52 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  rotaPosition:
+    type: integer
+    format: int64
+  directoryId:
+    type: string
+  systemIdentifier:
+    type: string
+  shelfmark:
+    type: string
+  availability:
+    type: string
+  normalisedAvailability:
+    type: object
+  availableFrom:
+    type: string
+    format: date-time
+  protocolStatus:
+    type: integer
+    format: int64
+  loadBalancingScore:
+    type: integer
+    format: int64
+  loadBalancingReason:
+    type: string
+  state:
+    $ref: 'Status.yaml'
+  peerSymbol:
+    $ref: 'Symbol.yaml'
+  note:
+    type: string
+  instanceIdentifier:
+    type: string
+  copyIdentifier:
+    type: string
+  protocol:
+    $ref: 'Protocol.yaml'
+required:
+- patronRequest
+- rotaPosition
+- directoryId

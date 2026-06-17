@@ -1,0 +1,12 @@
+type: object
+properties:
+  stateModel:
+    $ref: 'StateModel.yaml'
+  inheritedStateModel:
+    $ref: 'StateModel.yaml'
+  priority:
+    type: integer
+    format: int32
+required:
+- stateModel
+- inheritedStateModel

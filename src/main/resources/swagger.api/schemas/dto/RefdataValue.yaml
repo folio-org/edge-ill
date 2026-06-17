@@ -1,0 +1,9 @@
+type: object
+description: A reference-data value (controlled vocabulary entry)
+properties:
+  id:
+    type: string
+  value:
+    type: string
+  label:
+    type: string

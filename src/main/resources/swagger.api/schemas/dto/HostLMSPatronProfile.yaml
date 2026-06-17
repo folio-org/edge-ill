@@ -1,0 +1,23 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  name:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  canCreateRequests:
+    type: boolean
+  hidden:
+    type: boolean
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- code
+- institution

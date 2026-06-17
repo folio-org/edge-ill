@@ -1,0 +1,20 @@
+get:
+  tags: [ AvailableAction ]
+  description: "List the from states that an action can be triggered from"
+  operationId: getAvailableActionsFromStates
+  parameters:
+    - $ref: '../../parameters/path/state-model.yaml'
+    - $ref: '../../parameters/path/action-code.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/responses/AvailableActionsFromState.yaml'
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

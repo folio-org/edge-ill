@@ -1,0 +1,30 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  description:
+    type: string
+  active:
+    type: boolean
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  actionEvent:
+    $ref: 'ActionEvent.yaml'
+  templateContainer:
+    $ref: 'TemplateContainer.yaml'
+  serviceType:
+    $ref: 'RefdataValue.yaml'
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- name
+- description
+- actionEvent
+- templateContainer
+- institution

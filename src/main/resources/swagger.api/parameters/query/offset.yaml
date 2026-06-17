@@ -1,0 +1,5 @@
+name: offset
+in: query
+required: false
+schema:
+  type: string

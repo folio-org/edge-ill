@@ -1,0 +1,13 @@
+get:
+  tags: [ PatronRequests ]
+  description: "Generates the pick list batch based on the passed in filter"
+  operationId: generatePickListBatch
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

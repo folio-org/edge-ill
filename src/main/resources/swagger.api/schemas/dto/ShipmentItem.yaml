@@ -1,0 +1,12 @@
+type: object
+properties:
+  id:
+    type: string
+  isReturning:
+    type: boolean
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time

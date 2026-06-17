@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  searchTree:
+    $ref: 'SearchTree.yaml'
+  maximumHits:
+    type: integer
+    format: int32
+  hostLmsType:
+    $ref: 'RefdataValue.yaml'
+  excludeHostLmsTypes:
+    type: array
+    items:
+      $ref: 'SearchExcludeHostLmsType.yaml'
+required:
+- code
+- description

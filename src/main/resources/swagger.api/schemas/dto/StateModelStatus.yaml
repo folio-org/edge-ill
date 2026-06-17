@@ -1,0 +1,17 @@
+type: object
+properties:
+  stateModel:
+    $ref: 'StateModel.yaml'
+  state:
+    $ref: 'Status.yaml'
+  canTriggerStaleRequest:
+    type: boolean
+  canTriggerOverdueRequest:
+    type: boolean
+  isTerminal:
+    type: boolean
+  triggerPullSlipEmail:
+    type: boolean
+required:
+- stateModel
+- state

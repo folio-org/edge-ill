@@ -1,0 +1,18 @@
+get:
+  tags: [ RemoteAction ]
+  description: "Perform the specified remote action"
+  operationId: performRemoteAction
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

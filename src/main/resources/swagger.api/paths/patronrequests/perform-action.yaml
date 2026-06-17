@@ -1,0 +1,23 @@
+post:
+  tags: [ PatronRequests ]
+  description: "Performs the action the posted action for the given request"
+  operationId: patronrequestsPerformAction
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

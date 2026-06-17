@@ -1,0 +1,13 @@
+get:
+  tags: [ SharedIndexQuery ]
+  description: "Fetch the bib record for a cluster identifier using a query search"
+  operationId: sharedIndexQueryByQuery
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

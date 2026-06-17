@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: string
+  addressLabel:
+    type: string
+  countryCode:
+    type: string
+  owner:
+    $ref: 'DirectoryEntry.yaml'
+  lines:
+    type: array
+    items:
+      $ref: 'AddressLine.yaml'
+  tags:
+    type: array
+    items:
+      type: object
+required:
+- addressLabel

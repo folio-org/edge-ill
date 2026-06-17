@@ -1,0 +1,43 @@
+get:
+  tags: [ SearchGroup ]
+  description: "Search with the supplied criteria"
+  operationId: findSearchGroups
+  parameters:
+    - $ref: '../../parameters/query/term.yaml'
+    - $ref: '../../parameters/query/match.yaml'
+    - $ref: '../../parameters/query/filters.yaml'
+    - $ref: '../../parameters/query/sort.yaml'
+    - $ref: '../../parameters/query/max.yaml'
+    - $ref: '../../parameters/query/per-page.yaml'
+    - $ref: '../../parameters/query/offset.yaml'
+    - $ref: '../../parameters/query/page.yaml'
+    - $ref: '../../parameters/query/stats.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+post:
+  tags: [ SearchGroup ]
+  description: "Creates a new record with the supplied data"
+  operationId: createSearchGroup
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '201':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

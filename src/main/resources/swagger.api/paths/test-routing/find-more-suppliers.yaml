@@ -1,0 +1,13 @@
+get:
+  tags: [ TestRouting ]
+  description: "View the results from request routing"
+  operationId: testRoutingFindMoreSuppliers
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

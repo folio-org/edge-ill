@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  description:
+    type: string
+  lhsSearchAttribute:
+    $ref: 'SearchAttribute.yaml'
+  lhsSearchTree:
+    $ref: 'SearchTree.yaml'
+  operator:
+    $ref: 'RefdataValue.yaml'
+  rhsSearchAttribute:
+    $ref: 'SearchAttribute.yaml'
+  rhsSearchTree:
+    $ref: 'SearchTree.yaml'
+required:
+- code
+- description

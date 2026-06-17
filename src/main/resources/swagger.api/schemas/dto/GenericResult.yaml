@@ -1,0 +1,19 @@
+type: object
+properties:
+  id:
+    description: The id that was acted upon or the result of any processing, if any
+    type: string
+  result:
+    $ref: '../types/ActionResult.yaml'
+  errorCode:
+    description: Error code
+    type: string
+  messages:
+    type: array
+    items:
+      description: Message describing the error
+      type: string
+
+example:
+  id: "2b56a3b5-756b-4805-953d-b251b6164bc0"
+  result: "SUCCESS"

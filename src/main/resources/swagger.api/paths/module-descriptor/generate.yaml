@@ -1,0 +1,13 @@
+get:
+  tags: [ ModuleDescriptor ]
+  description: "Generate the module descriptor template"
+  operationId: moduleDescriptorGenerate
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

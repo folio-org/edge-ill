@@ -1,0 +1,7 @@
+type: string
+enum:
+  - 'LOGO'
+  - 'REPORT_DEFINITION'
+  - 'REPORT_OUTPUT'
+  - 'REQUESTED_DOCUMENT'
+

@@ -1,0 +1,5 @@
+name: outputFormat
+in: query
+required: false
+schema:
+  type: string

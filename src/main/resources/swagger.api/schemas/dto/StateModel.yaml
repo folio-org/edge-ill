@@ -1,0 +1,34 @@
+type: object
+properties:
+  id:
+    type: string
+  shortcode:
+    type: string
+  name:
+    type: string
+  initialState:
+    $ref: 'Status.yaml'
+  staleAction:
+    $ref: 'ActionEvent.yaml'
+  overdueStatus:
+    $ref: 'Status.yaml'
+  pickSlipPrintedAction:
+    $ref: 'ActionEvent.yaml'
+  states:
+    type: array
+    items:
+      $ref: 'StateModelStatus.yaml'
+  inheritedStateModels:
+    type: array
+    items:
+      $ref: 'StateModelInheritsFrom.yaml'
+  availableActions:
+    type: array
+    items:
+      $ref: 'AvailableAction.yaml'
+  doNotInheritTransitions:
+    type: array
+    items:
+      $ref: 'StateModelDoNotInheritTransition.yaml'
+required:
+- shortcode

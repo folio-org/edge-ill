@@ -1,0 +1,16 @@
+get:
+  tags: [ Report ]
+  description: "Executes the picklist report"
+  operationId: reportGeneratePicklist
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/octet-stream:
+          schema:
+            type: string
+            format: binary
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

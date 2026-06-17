@@ -1,0 +1,31 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  name:
+    type: string
+  icalRrule:
+    type: string
+  lastCompleted:
+    type: integer
+    format: int64
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  supplyPreference:
+    type: integer
+    format: int64
+  hidden:
+    type: boolean
+  institution:
+    $ref: 'Institution.yaml'
+  correspondingDirectoryEntry:
+    $ref: 'DirectoryEntry.yaml'
+required:
+- code
+- institution

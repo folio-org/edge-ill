@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  templateResolver:
+    $ref: 'RefdataValue.yaml'
+  description:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  context:
+    type: string
+  localizedTemplates:
+    type: array
+    items:
+      $ref: 'LocalizedTemplate.yaml'

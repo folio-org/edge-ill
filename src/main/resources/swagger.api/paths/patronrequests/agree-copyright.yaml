@@ -1,0 +1,27 @@
+put:
+  tags: [ PatronRequests ]
+  description: "Agree to the copyright terms for the patron request"
+  operationId: agreeCopyright
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - $ref: '../../parameters/path/patron-request-id.yaml'
+  requestBody:
+    description: "Request body for agreeing to the copyright terms"
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/dto/PatronRequest.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/dto/GenericResult.yaml'
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

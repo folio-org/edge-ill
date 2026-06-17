@@ -1,0 +1,22 @@
+type: object
+properties:
+  id:
+    type: string
+  dateCreated:
+    type: string
+    format: date-time
+  position:
+    type: integer
+    format: int32
+  fileDefinition:
+    $ref: 'FileDefinition.yaml'
+  uri:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  audit:
+    type: array
+    items:
+      $ref: 'PatronRequestDocumentAudit.yaml'
+required:
+- patronRequest

@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+  symbol:
+    type: string
+  priority:
+    type: string
+  authority:
+    $ref: 'NamingAuthority.yaml'
+  owner:
+    $ref: 'DirectoryEntry.yaml'
+required:
+- symbol
+- authority
+- owner

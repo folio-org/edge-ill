@@ -1,0 +1,16 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  folioUserId:
+    type: string
+  institutionManaging:
+    $ref: 'Institution.yaml'
+  institutionGroups:
+    type: object
+required:
+- name
+- folioUserId
+- institutionManaging

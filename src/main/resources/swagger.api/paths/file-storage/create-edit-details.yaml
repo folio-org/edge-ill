@@ -1,0 +1,13 @@
+get:
+  tags: [ FileStorage ]
+  description: "Details required for creating or editing the file storage details"
+  operationId: fileStorageCreateEditDetails
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

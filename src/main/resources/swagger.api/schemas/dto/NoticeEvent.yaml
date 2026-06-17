@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: string
+  patronRequest:
+    $ref: 'PatronRequest.yaml'
+  trigger:
+    $ref: 'RefdataValue.yaml'
+  sent:
+    type: boolean
+  dateCreated:
+    type: string
+    format: date-time
+  jsonData:
+    type: string
+  institution:
+    $ref: 'Institution.yaml'
+required:
+- trigger
+- institution

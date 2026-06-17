@@ -1,0 +1,61 @@
+get:
+  tags:
+    - Batch
+  description: "Returns the supplied record"
+  operationId: getBatchById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+put:
+  tags:
+    - Batch
+  description: "Updates the record with the supplied data"
+  operationId: putBatchById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+
+delete:
+  tags:
+    - Batch
+  description: "Deletes the record with the supplied identifier"
+  operationId: deleteBatchById
+  parameters:
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '204':
+      description: No content
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '404':
+      $ref: '../../error-responses/NotFound.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'
+

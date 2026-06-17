@@ -1,0 +1,24 @@
+type: object
+properties:
+  id:
+    type: string
+  template:
+    $ref: 'TemplateContainer.yaml'
+  realTime:
+    type: boolean
+  format:
+    $ref: 'RefdataValue.yaml'
+  trigger:
+    $ref: 'RefdataValue.yaml'
+  dateCreated:
+    type: string
+    format: date-time
+  lastUpdated:
+    type: string
+    format: date-time
+  noticePolicy:
+    $ref: 'NoticePolicy.yaml'
+required:
+- template
+- format
+- trigger

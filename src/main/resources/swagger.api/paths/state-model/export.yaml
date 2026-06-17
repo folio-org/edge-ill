@@ -1,0 +1,13 @@
+get:
+  tags: [ StateModel ]
+  description: "Exports the full definitions of the state models, without any the ids (just the codes), if the stateModel query parameter is specified then we only return that state model"
+  operationId: stateModelExport
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json: {}
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

@@ -1,0 +1,25 @@
+type: object
+properties:
+  id:
+    type: string
+  institution:
+    $ref: 'Institution.yaml'
+  section:
+    type: string
+  key:
+    type: string
+  settingType:
+    type: string
+  vocab:
+    type: string
+  defValue:
+    type: string
+  value:
+    type: string
+  hidden:
+    type: boolean
+required:
+- institution
+- section
+- key
+- settingType

@@ -1,0 +1,26 @@
+type: object
+properties:
+  id:
+    type: string
+  code:
+    type: string
+  presSeq:
+    type: string
+  visible:
+    type: boolean
+  needsAttention:
+    type: boolean
+  terminal:
+    type: boolean
+  stage:
+    $ref: '../types/Stage.yaml'
+  terminalSequence:
+    type: integer
+    format: int32
+  tags:
+    type: array
+    items:
+      type: object
+required:
+- code
+- terminal

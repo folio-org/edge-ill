@@ -1,0 +1,9 @@
+type: string
+enum:
+  - 'PREPARING'
+  - 'LOCAL'
+  - 'ACTIVE'
+  - 'ACTIVE_PENDING_CONDITIONAL_ANSWER'
+  - 'ACTIVE_SHIPPED'
+  - 'COMPLETED'
+
