@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathTemplate": "/ill/patronrequests/{patronRequestId}/viewDocument",
+    "pathParameters": {
+      "patronRequestId": {
+        "matches": ".{36}"
+      }
+    },
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/pdf"
+    },
+    "transformers": [ "response-template" ],
+    "body": "Test License Agreement"
+  }
+}

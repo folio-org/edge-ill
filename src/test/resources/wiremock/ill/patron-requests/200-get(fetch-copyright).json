@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathTemplate": "/ill/patronrequests/{patronRequestId}/fetchCopyright",
+    "pathParameters": {
+      "patronRequestId": {
+        "matches": ".{36}"
+      }
+    },
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [ "response-template" ],
+    "jsonBody": {
+      "id": "{{ request.path.[2] }}",
+      "result": "SUCCESS",
+      "errorCode": null,
+      "messages": [],
+      "copyright": "Test License Agreement"
+    }
+  }
+}

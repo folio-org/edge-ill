@@ -1,0 +1,22 @@
+get:
+  tags: [ External ]
+  description: "Return the statistics"
+  operationId: statistics
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - in: query
+      name: symbol
+      description: The symbol in the form authority:symbol that the statistics are required for
+      schema:
+        type: string
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

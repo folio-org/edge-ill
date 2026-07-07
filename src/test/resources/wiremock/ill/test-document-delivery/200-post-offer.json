@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/ill/testDocumentDelivery/offer",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      },
+      "Content-Type": {
+        "contains": "multipart/form-data"
+      }
+    },
+    "multipartPatterns": [
+      {
+        "name": "systemId",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "test-system-id"
+          }
+        ]
+      },
+      {
+        "name": "offerReference",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "REF-001"
+          }
+        ]
+      },
+      {
+        "name": "pin",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "1234"
+          }
+        ]
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "offerURL": "https://example.com/offer/123",
+      "state": "PENDING",
+      "pin": "1234",
+      "workflow": "ILL",
+      "message": "Test response message"
+    }
+  }
+}

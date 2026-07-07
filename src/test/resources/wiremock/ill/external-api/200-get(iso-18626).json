@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/ill/externalApi/iso18626",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/xml"
+    },
+    "transformers": [ "response-template" ],
+    "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ISO18626Message xmlns=\"http://illtransactions.org/2013/iso18626\" version=\"1.0\"><RequestingAgencyMessageConfirmation><confirmationHeader><supplyingAgencyId><agencyIdType>ISIL</agencyIdType><agencyIdValue>DE-Test</agencyIdValue></supplyingAgencyId><requestingAgencyId><agencyIdType>ISIL</agencyIdType><agencyIdValue>US-Test</agencyIdValue></requestingAgencyId><requestingAgencyRequestId>c294a22a-e2fd-4aa7-b2d1-7bf403f89a52</requestingAgencyRequestId><timestamp>2026-07-03T00:00:00Z</timestamp></confirmationHeader><result>SUCCESS</result></RequestingAgencyMessageConfirmation></ISO18626Message>"
+  }
+}
+

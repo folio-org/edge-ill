@@ -9,6 +9,37 @@ servers:
   - url: /
 
 paths:
-  ## Application API
-  /illService/tenants/{tenantId}:
-    $ref: 'paths/application/ill.yaml'
+
+  ### ILL Public Endpoints
+  /illService/tenants/{tenantId}/externalApi/directoryEntry:
+    $ref: 'paths/external-api/directory-entry.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/iso18626:
+    $ref: 'paths/external-api/iso18626.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/statistics:
+    $ref: 'paths/external-api/statistics.yaml'
+
+  /illService/tenants/{tenantId}/externalApi/statusReport:
+    $ref: 'paths/external-api/status-report.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/openURL:
+    $ref: 'paths/patron-requests/open-url.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/agreeCopyright:
+    $ref: 'paths/patron-requests/agree-copyright.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/fetchCopyright:
+    $ref: 'paths/patron-requests/fetch-copyright.yaml'
+
+  /illService/tenants/{tenantId}/patronrequests/{patronRequestId}/viewDocument:
+    $ref: 'paths/patron-requests/view-document.yaml'
+
+  /illService/tenants/{tenantId}/testDocumentDelivery/offer:
+    $ref: 'paths/test-document-delivery/offer.yaml'
+
+  /illService/tenants/{tenantId}/testDocumentDelivery/register:
+    $ref: 'paths/test-document-delivery/register.yaml'
+
+  /illService/tenants/{tenantId}/remoteAction/{id}/perform:
+    $ref: 'paths/remote-action/perform.yaml'

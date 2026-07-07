@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathTemplate": "/ill/remoteAction/{id}/perform",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    },
+    "pathParameters": {
+      "id": {
+        "matches": ".{36}"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/plain"
+    },
+    "transformers": [ "response-template" ],
+    "body": "Action Text"
+  }
+}

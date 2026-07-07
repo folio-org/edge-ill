@@ -1,0 +1,23 @@
+post:
+  tags: [ TestDocumentDelivery ]
+  description: "Test document delivery registration"
+  operationId: register
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+  requestBody:
+    required: false
+    content:
+      multipart/form-data:
+        schema:
+          $ref: '../../schemas/request/TestDocumentDeliveryRegister.yaml'
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

@@ -1,0 +1,19 @@
+get:
+  tags: [ RemoteAction ]
+  description: "Perform Remote Action"
+  operationId: perform
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - $ref: '../../parameters/path/id.yaml'
+  responses:
+    '200':
+      description: Successful response - the document is streamed as-is from the backend (mod-ill)
+      content:
+        "*/*":
+          schema:
+            type: string
+            format: binary
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

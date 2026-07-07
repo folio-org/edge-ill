@@ -1,0 +1,61 @@
+type: object
+properties:
+  systemId:
+    type: string
+    description: The id of the institution an order is to be placed for
+  url:
+    type: string
+    description: The url of the document delivery system
+  privateKey:
+    type: string
+    description: The private key to use
+  offerReference:
+    type: string
+    description: The reference for this document
+  documentTitle:
+    type: string
+    description: The title for this offer
+  pin:
+    type: string
+    description: The pin the user has to use to access the document
+  documentSecurityLevel:
+    type: string
+    description: The document security level
+    enum:
+      - DRM
+      - MARKED
+      - NONE
+      - SECURE
+  offerType:
+    type: string
+    description: The type of offer being made
+    enum:
+      - DOCUMENT_STREAM
+      - URL
+  attestationLevel:
+    type: string
+    description: The attestation level
+    enum:
+      - SIMPLE
+  patronEmail:
+    type: string
+    description: The patron's email
+  rawSourceMimeType:
+    type: string
+    description: The mime type for the document
+  workflow:
+    type: string
+    description: The workflow we want this offer to follow
+  file:
+    type: string
+    description: The file to be uploaded, either this property of the rawSourceUrl property must be specified
+    format: binary
+
+required:
+  - systemId
+  - url
+  - privateKey
+  - offerReference
+  - pin
+  - documentSecurityLevel
+  - attestationLevel

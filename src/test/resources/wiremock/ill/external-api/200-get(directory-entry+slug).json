@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/ill/externalApi/directoryEntry",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    },
+    "queryParameters": {
+      "slug": {
+        "equalTo": "de-slug"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [ "response-template" ],
+    "jsonBody": {
+      "id": "29f56fcf-7f1d-4a4e-8ad4-d1e46a22c04f",
+      "name": "Test Directory Entry",
+      "slug": "de-slug",
+      "description": "Test Directory Entry Description"
+    }
+  }
+}

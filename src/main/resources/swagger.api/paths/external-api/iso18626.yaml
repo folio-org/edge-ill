@@ -1,0 +1,24 @@
+post:
+  tags: [ External ]
+  description: "Receives an ISO18626 xml message"
+  operationId: iso18626
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+  requestBody:
+    required: false
+    content:
+      application/json:
+        schema:
+          type: object
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/xml:
+          schema:
+            type: string
+            format: binary
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

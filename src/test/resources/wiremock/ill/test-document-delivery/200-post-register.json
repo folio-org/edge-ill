@@ -1,0 +1,72 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/ill/testDocumentDelivery/register",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      },
+      "Content-Type": {
+        "contains": "multipart/form-data"
+      }
+    },
+    "multipartPatterns": [
+      {
+        "name": "systemCode",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "test-system-code"
+          }
+        ]
+      },
+      {
+        "name": "url",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "https://doc-delivery.example.com"
+          }
+        ]
+      },
+      {
+        "name": "name",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "Institution Name"
+          }
+        ]
+      },
+      {
+        "name": "attestationLevel",
+        "matchingType": "ANY",
+        "bodyPatterns": [
+          {
+            "equalTo": "SIMPLE"
+          }
+        ]
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": "de783666-64a5-43d2-a0f3-63e8c8d5d3dd",
+      "offeringSystemCode": "test-system-code",
+      "offeringSystemName": "Institution Name",
+      "systemType": "ILL",
+      "attestationType": "SIMPLE",
+      "offeringSystemConfig": {},
+      "status": "PENDING",
+      "keyPairFields": {},
+      "privateKey": null,
+      "publicKey": null,
+      "createdAt": "2026-06-12T00:00:00Z",
+      "updatedAt": "2026-06-12T00:00:00Z"
+    }
+  }
+}
