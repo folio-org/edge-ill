@@ -1,0 +1,22 @@
+type: object
+properties:
+  systemCode:
+    type: string
+    description: The code of the institution we want to register
+  url:
+    type: string
+    description: The url of the document delivery system
+  name:
+    type: string
+    description: The name of the institution we are registering for
+  attestationLevel:
+    type: string
+    description: The attestation level
+    enum:
+      - SIMPLE
+
+required:
+  - systemCode
+  - url
+  - name
+  - attestationLevel

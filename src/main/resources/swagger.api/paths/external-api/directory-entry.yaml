@@ -1,0 +1,23 @@
+get:
+  tags: [ External ]
+  description: "External API access to directory entries"
+  operationId: directoryEntry
+  parameters:
+    - $ref: '../../parameters/path/tenant-id.yaml'
+    - in: query
+      name: slug
+      description: The directory entry the information is requested for
+      schema:
+        type: string
+      required: false
+  responses:
+    '200':
+      description: Successful response
+      content:
+        application/json:
+          schema:
+            type: object
+    '400':
+      $ref: '../../error-responses/BadRequest.yaml'
+    '500':
+      $ref: '../../error-responses/InternalServerError.yaml'

@@ -1,0 +1,32 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPathTemplate": "/ill/patronrequests/{patronRequestId}/agreeCopyright",
+    "pathParameters": {
+      "patronRequestId": {
+        "matches": ".+"
+      }
+    },
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      },
+      "Content-Type":{
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["response-template"],
+    "jsonBody": {
+      "id": "{{ request.path.[2] }}",
+      "result": "SUCCESS",
+      "errorCode": null,
+      "messages": []
+    }
+  }
+}

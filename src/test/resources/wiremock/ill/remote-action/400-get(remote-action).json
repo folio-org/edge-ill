@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathTemplate": "/ill/remoteAction/{id}/perform",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    },
+    "pathParameters": {
+      "id": {
+        "matches": ".{36}"
+      }
+    }
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [ "response-template" ],
+    "jsonBody": {
+      "actionResult": "INVALID_PARAMETERS",
+      "message": "Unable to find remote action with id: {{ request.path.[2] }}",
+      "status": false,
+      "code": 0
+    }
+  }
+}

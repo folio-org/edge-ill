@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/ill/externalApi/statusReport",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": [ "response-template" ],
+    "jsonBody": {
+      "institutions": []
+    }
+  }
+}

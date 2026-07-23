@@ -1,12 +1,15 @@
 package org.folio.edgeill.configuration;
 
 import java.util.concurrent.Executors;
+import java.util.function.UnaryOperator;
 import org.folio.spring.liquibase.FolioSpringLiquibase;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverters;
 import org.springframework.integration.channel.ExecutorChannel;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
@@ -30,5 +33,11 @@ public class EdgeIllSpringConfiguration {
   @Bean
   public ExecutorChannel retrievalQueueRecordFlow() {
     return new ExecutorChannel(Executors.newCachedThreadPool());
+  }
+
+  @Bean("edgeRestClientCustomizer")
+  public UnaryOperator<RestClient.Builder> edgeRestClientCustomizer() {
+    return rcb -> rcb
+      .configureMessageConverters(HttpMessageConverters.Builder::registerDefaults);
   }
 }

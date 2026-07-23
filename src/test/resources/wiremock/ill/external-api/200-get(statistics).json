@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/ill/externalApi/statistics",
+    "headers": {
+      "X-Okapi-Tenant": {
+        "equalTo": "test_tenant"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "transformers": ["response-template"],
+    "jsonBody": {
+      "asAt": 1783097532920,
+      "current": [],
+      "requestsByState": {},
+      "requestsByTag": {},
+      "error": null
+    }
+  }
+}

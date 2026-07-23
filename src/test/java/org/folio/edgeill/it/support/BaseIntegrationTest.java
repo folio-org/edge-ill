@@ -1,25 +1,31 @@
 package org.folio.edgeill.it.support;
 
-import org.folio.edgeill.support.wiremock.WithWiremockContainer;
-import org.junit.jupiter.api.BeforeAll;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 
-@SpringBootTest
+import io.restassured.RestAssured;
+import org.folio.edgeill.support.wiremock.WithWiremockContainer;
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.test.context.ActiveProfiles;
+
 @ActiveProfiles("it")
-@AutoConfigureMockMvc
 @WithWiremockContainer
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 public class BaseIntegrationTest {
 
   protected static final String TENANT = "test_tenant";
   protected static final String API_USERNAME = "user";
-  protected static MockMvc mockMvc;
 
-  @BeforeAll
-  static void setupMockMvc(@Autowired MockMvc mockMvc) {
-    BaseIntegrationTest.mockMvc = mockMvc;
+  @LocalServerPort
+  private int port;
+
+  @BeforeEach
+  void configureRestAssured() {
+    RestAssured.port = port;
+    RestAssured.baseURI = "http://localhost";
+    RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
   }
 }
+
+

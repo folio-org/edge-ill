@@ -4,11 +4,17 @@ spring:
   main:
     allow-bean-definition-overriding: true
   jackson:
-    default-property-inclusion: non_empty
+    default-property-inclusion: non_null
   liquibase:
     enabled: false
   flyway:
     enabled: false
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: ${MULTIPART_FILE_SIZE_THRESHOLD:1MB}
+      max-file-size: ${MULTIPART_MAX_FILE_SIZE:500MB}
+      max-request-size: ${MULTIPART_MAX_REQUEST_SIZE:500MB}
 
 management:
   endpoints:
