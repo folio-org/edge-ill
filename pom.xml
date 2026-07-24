@@ -42,7 +42,7 @@
     <jetbrains-annotations.version>26.1.0</jetbrains-annotations.version>
 
     <!-- Plugin Versions   -->
-    <checkstyle.version>13.7.0</checkstyle.version>
+    <checkstyle.version>13.8.0</checkstyle.version>
     <folio-java-checkstyle.version>1.2.0</folio-java-checkstyle.version>
     <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
     <copy-rename-maven-plugin.version>1.0.1</copy-rename-maven-plugin.version>
