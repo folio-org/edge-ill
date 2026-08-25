@@ -1,6 +1,6 @@
 spring:
   application:
-    name: edge-dcb
+    name: edge-ill
 
 folio:
   client:
