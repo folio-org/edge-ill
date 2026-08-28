@@ -1,3 +1,3 @@
-## v0.0.1 In Progress
+## v1.0.0 - 2028.08.28
 
-* Initialize repository.
+* Initial release providing ability to proxy public API calls to ILL.
